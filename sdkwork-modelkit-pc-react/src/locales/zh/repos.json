@@ -1,0 +1,20 @@
+{
+  "discover": "发现",
+  "repositories": "托管仓库",
+  "search_repos": "搜索仓库...",
+  "featured": "推荐",
+  "categories": "分类",
+  "submit_repo": "提交仓库",
+  "txt_1020": "Git Clone Address / Git 仓库地址",
+  "txt_1021": "Recommendation Reason / 推荐理由",
+  "txt_1022": "About this repository / 项目介绍",
+  "txt_1023": "Submit / Recommend Repository (推荐或提交仓库)",
+  "txt_1024": "Git Repository URL / Git 仓库地址",
+  "txt_1025": "Organization Name / 组织或作者名称",
+  "txt_1026": "Repository Name / 仓库名称",
+  "txt_1027": "Primary Language / 主要语言",
+  "txt_1028": "Category / 分类",
+  "txt_1029": "Short Description / 项目一句话简述",
+  "txt_1030": "Why recommend this repository? / 推荐原因与痛点解决",
+  "txt_1031": "Submitter Email / 您的联系邮箱 (Optional)"
+}

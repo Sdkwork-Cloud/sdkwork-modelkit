@@ -1,0 +1,11 @@
+[package]
+name = "sdkwork-modelkit-catalog-service"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sdkwork-modelkit-preferences-service = { workspace = true }

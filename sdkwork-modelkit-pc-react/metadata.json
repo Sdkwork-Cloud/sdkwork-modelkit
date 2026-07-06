@@ -1,0 +1,8 @@
+{
+  "name": "ModelKit11",
+  "description": "Agent toolkit manager based on SDKWork standard with Control Center style UI",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

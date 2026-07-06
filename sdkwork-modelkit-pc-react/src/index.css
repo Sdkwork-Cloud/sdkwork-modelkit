@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-canvas: var(--color-canvas);
+  --color-panel: var(--color-panel);
+  --color-surface: var(--color-surface);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-button-dark: var(--color-button-dark);
+  --color-divider: var(--color-divider);
+  --color-divider-strong: var(--color-divider-strong);
+  
+  --color-text-main: var(--color-text-main);
+  --color-text-muted: var(--color-text-muted);
+  
+  --color-primary-main: var(--color-primary-main);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-alpha: var(--color-primary-alpha);
+}
+
+:root {
+  /* WeChat PC Client Theme Style: Light Gray Canvas / Silk Off-Whites */
+  --color-canvas: #f3f3f3;
+  --color-panel: #ffffff;
+  --color-surface: #e6e6e6;
+  --color-surface-hover: #dadada;
+  --color-button-dark: #cccccc;
+  --color-divider: #e2e2e2;
+  --color-divider-strong: #d2d2d2;
+  
+  --color-text-main: #191919;
+  --color-text-muted: #7f7f7f;
+  
+  /* Signature WeChat Green Color */
+  --color-primary-main: #07c160;
+  --color-primary-hover: #06ad56;
+  --color-primary-light: #26d177;
+  --color-primary-dark: #058f48;
+  --color-primary-alpha: rgba(7, 193, 110, 0.09);
+}
+
+.dark {
+  /* WeChat PC Dark Style: Charcoal Obsidians */
+  --color-canvas: #191919;
+  --color-panel: #202020;
+  --color-surface: #2d2d2d;
+  --color-surface-hover: #383838;
+  --color-button-dark: #444444;
+  --color-divider: #2b2b2b;
+  --color-divider-strong: #3d3d3d;
+  
+  --color-text-main: #dfdfdf;
+  --color-text-muted: #8c8c9c;
+}
+
+/* Theme color variations */
+html[data-theme="indigo"] {
+  --color-primary-main: #5C5CFF;
+  --color-primary-hover: #4848DF;
+  --color-primary-light: #8A8AFF;
+  --color-primary-dark: #3737C8;
+  --color-primary-alpha: rgba(92, 92, 255, 0.08);
+}
+html[data-theme="blue"] {
+  --color-primary-main: #2E65FF;
+  --color-primary-hover: #1A4BD6;
+  --color-primary-light: #618AFF;
+  --color-primary-dark: #0D33A6;
+  --color-primary-alpha: rgba(46, 101, 255, 0.08);
+}
+html[data-theme="amber"] {
+  --color-primary-main: #F2901F;
+  --color-primary-hover: #D77A15;
+  --color-primary-light: #F6AB50;
+  --color-primary-dark: #B6630C;
+  --color-primary-alpha: rgba(242, 144, 31, 0.08);
+}
+html[data-theme="teal"] {
+  --color-primary-main: #0FAF9C;
+  --color-primary-hover: #0C9281;
+  --color-primary-light: #3CC7B5;
+  --color-primary-dark: #086D60;
+  --color-primary-alpha: rgba(15, 175, 156, 0.08);
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background-color: var(--color-canvas);
+  color: var(--color-text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom scrollbar for premium dark slate theme */
+::-webkit-scrollbar,
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track,
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb,
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-divider-strong);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover,
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

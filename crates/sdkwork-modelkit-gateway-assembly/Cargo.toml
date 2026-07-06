@@ -1,0 +1,10 @@
+[package]
+name = "sdkwork-modelkit-gateway-assembly"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+axum.workspace = true
+sdkwork-modelkit-database-host.workspace = true
+sdkwork-routes-modelkit-app-api.workspace = true
+sdkwork-routes-modelkit-http-auth.workspace = true

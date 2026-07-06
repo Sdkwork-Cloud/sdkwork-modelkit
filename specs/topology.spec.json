@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "kind": "sdkwork.app.topology",
+  "appId": "sdkwork-modelkit",
+  "archetype": "application-http-gateway",
+  "profileRoot": "configs/topology",
+  "profilePattern": "{deploymentProfile}.{serviceLayout}.{environment}.env",
+  "vocabulary": {
+    "serviceLayout": {
+      "allowed": ["unified-process", "split-services"]
+    },
+    "environment": {
+      "allowed": ["development", "production"]
+    },
+    "deploymentProfile": {
+      "allowed": ["standalone", "cloud"]
+    }
+  },
+  "defaults": {
+    "developmentProfileId": "standalone.unified-process.development",
+    "productionProfileId": "cloud.split-services.production",
+    "gatewayBind": "127.0.0.1:3901"
+  },
+  "profileFiles": {
+    "standalone.unified-process.development": "configs/topology/standalone.unified-process.development.env"
+  },
+  "envKeys": {
+    "serviceLayout": "SDKWORK_MODELKIT_SERVICE_LAYOUT",
+    "environment": "SDKWORK_MODELKIT_ENVIRONMENT",
+    "profileId": "SDKWORK_MODELKIT_PROFILE_ID",
+    "standaloneGatewayBind": "SDKWORK_MODELKIT_APPLICATION_PUBLIC_INGRESS_BIND",
+    "clientApiGatewayBaseUrl": "VITE_SDKWORK_MODELKIT_PLATFORM_API_GATEWAY_HTTP_URL",
+    "apiGatewayBaseUrl": "SDKWORK_MODELKIT_PLATFORM_API_GATEWAY_HTTP_URL",
+    "deploymentProfile": "SDKWORK_MODELKIT_DEPLOYMENT_PROFILE",
+    "clientDeploymentProfile": "VITE_SDKWORK_MODELKIT_DEPLOYMENT_PROFILE"
+  },
+  "surfaces": {
+    "application.public-ingress": {
+      "connectivityPlane": "application",
+      "protocols": ["http"],
+      "bindEnv": "SDKWORK_MODELKIT_APPLICATION_PUBLIC_INGRESS_BIND",
+      "httpUrlEnv": "SDKWORK_MODELKIT_APPLICATION_PUBLIC_HTTP_URL",
+      "clientHttpEnv": "VITE_SDKWORK_MODELKIT_APPLICATION_PUBLIC_HTTP_URL"
+    }
+  },
+  "database": {
+    "appPrefix": "SDKWORK_MODELKIT"
+  },
+  "components": {
+    "applicationServer": {
+      "crate": "sdkwork-modelkit-standalone-gateway",
+      "binary": "sdkwork-modelkit-standalone-gateway"
+    }
+  },
+  "orchestration": {
+    "profiles": {
+      "standalone.unified-process.development": {
+        "processes": [
+          {
+            "id": "application.public-ingress",
+            "crate": "sdkwork-modelkit-standalone-gateway",
+            "binary": "sdkwork-modelkit-standalone-gateway",
+            "required": true
+          },
+          {
+            "id": "pc-renderer",
+            "package": "@sdkwork/modelkit-pc-react",
+            "script": "dev",
+            "required": true
+          }
+        ],
+        "healthSurfaces": ["application.public-ingress"]
+      }
+    }
+  }
+}

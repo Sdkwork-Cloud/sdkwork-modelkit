@@ -1,0 +1,25 @@
+{
+  "name": "@sdkwork/modelkit-workspace",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@sdkwork/modelkit-commons": "workspace:*",
+    "@sdkwork/modelkit-core": "workspace:*",
+    "@sdkwork/modelkit-pc-core": "workspace:*",
+    "@sdkwork/modelkit-services": "workspace:*",
+    "@sdkwork/modelkit-types": "workspace:*",
+    "@sdkwork/modelkit-sdk-typescript": "workspace:*",
+    "@sdkwork/utils": "workspace:*",
+    "sonner": "^2.0.7"
+  }
+}

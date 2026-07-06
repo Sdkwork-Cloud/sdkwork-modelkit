@@ -1,0 +1,15 @@
+{
+  "discover": "发现",
+  "websites": "热门站点",
+  "search_sites": "搜索站点...",
+  "featured": "推荐",
+  "categories": "分类",
+  "submit_site": "提交站点",
+  "editor_s_choice": "编辑精选",
+  "top_services": "顶级服务",
+  "see_all": "查看全部",
+  "more": "更多",
+  "more_endpoints": "更多节点服务",
+  "txt_1018": "About this endpoint / 节点介绍",
+  "txt_1019": "Base API URL / 接口地址"
+}

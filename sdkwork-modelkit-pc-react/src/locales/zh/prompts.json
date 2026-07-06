@@ -1,0 +1,19 @@
+{
+  "prompts_title": "提示词引擎",
+  "prompts_desc": "专为高级创作者设计的多模态系统级提示词集合系统",
+  "search_placeholder": "搜索提示词资源...",
+  "type_all": "全部",
+  "type_text": "普通提示词",
+  "type_agent": "智能体",
+  "type_image": "图片提示词",
+  "type_video": "视频提示词",
+  "type_music": "音乐提示词",
+  "type_sound": "音效提示词",
+  "btn_copy": "复制提示词",
+  "btn_use": "使用",
+  "views_count": "{count} 次使用",
+  "liked": "已点赞",
+  "author": "作者：",
+  "no_results": "找不到相关提示词",
+  "copied": "提示词已复制到剪贴板！"
+}

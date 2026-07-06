@@ -1,0 +1,22 @@
+{
+  "name": "@sdkwork/modelkit-shop",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@sdkwork/modelkit-pc-core": "workspace:*",
+    "@sdkwork/utils": "workspace:*",
+    "react": "catalog:",
+    "lucide-react": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  }
+}

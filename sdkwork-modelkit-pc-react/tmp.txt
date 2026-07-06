@@ -1,0 +1,47 @@
+469:  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+534:    if (selectedProduct && selectedProduct.skus && selectedProduct.skus.length > 0) {
+535:      setSelectedSku(selectedProduct.skus[0]);
+540:  }, [selectedProduct]);
+885:    if (!selectedProduct) return;
+902:      if (prod.id === selectedProduct.id) {
+913:    const currentSelected = updatedProducts.find(p => p.id === selectedProduct.id);
+931:        if (prod.id === selectedProduct.id) {
+952:      const updatedSelect = replProducts.find(p => p.id === selectedProduct.id);
+956:      toast.info(`🔔 卖家 [${selectedProduct.sellerName || '宝贝所有者'}] 已热烈答复了您的关于大家问题！`);
+1322:          {!selectedProduct && !showBargainChat && (
+1463:          {selectedProduct ? (
+1480:                        selectedProduct.type === 'virtual' 
+1484:                        {selectedProduct.type === 'virtual' ? '虚拟商品 (即时发券)' : '实物商品 (顺丰配送)'}
+1486:                      {selectedProduct.badge && (
+1488:                          {selectedProduct.badge}
+1491:                      {selectedProduct.merchantName && (
+1494:                          {selectedProduct.merchantName}
+1499:                      {selectedProduct.name}
+1502:                      {selectedProduct.description}
+1513:                        {(PRODUCT_CAROUSEL_IMAGES[selectedProduct.id] || [selectedProduct.imageUrl])[currentSlide]}
+1516:                        展示图片 ({currentSlide + 1} / {(PRODUCT_CAROUSEL_IMAGES[selectedProduct.id] || [selectedProduct.imageUrl]).length})
+1519:                        STOCK ID: {selectedProduct.id}•SLIDE-0{currentSlide + 1}
+1528:                        const slides = PRODUCT_CAROUSEL_IMAGES[selectedProduct.id] || [selectedProduct.imageUrl];
+1539:                        const slides = PRODUCT_CAROUSEL_IMAGES[selectedProduct.id] || [selectedProduct.imageUrl];
+1549:                      {(PRODUCT_CAROUSEL_IMAGES[selectedProduct.id] || [selectedProduct.imageUrl]).map((_, idx) => (
+1567:                      {selectedProduct.longDescription}
+1575:                      {selectedProduct.features.map((feature, idx) => (
+1588:                        💬 宝贝问大家 ({selectedProduct.comments?.length || 0})
+1595:                      {(!selectedProduct.comments || selectedProduct.comments.length === 0) ? (
+1598:                        selectedProduct.comments.map((comment) => (
+1675:                        {getActivePrice(selectedProduct, selectedSku)}
+1677:                      {(selectedSku?.originalPrice || (!selectedSku && selectedProduct.originalPrice)) && (
+1679:                          原价 ¥{selectedSku ? selectedSku.originalPrice : selectedProduct.originalPrice}
+1688:                          {selectedProduct.type === 'virtual' ? '即时在线分配安全券码' : '省内次日达 / 顺丰直配'}
+1691:                      {selectedProduct.estimatedDelivery && (
+1694:                           <span className="text-amber-500 font-semibold">{selectedProduct.estimatedDelivery}</span>
+1707:                  {selectedProduct.skus && selectedProduct.skus.length > 0 && (
+1714:                        {selectedProduct.skus.map(sku => {
+1758:                        ...selectedProduct.specs,
+1770:                    {selectedProduct.externalUrl ? (
+1772:                        onClick={() => window.open(selectedProduct.externalUrl, '_blank', 'noopener,noreferrer')}
+1776:                        前往 {selectedProduct.merchantName || '外部商城'} 购买
+1781:                          onClick={() => handleStartBargain(selectedProduct, selectedSku)}
+1789:                          onClick={() => handleAddToCart(selectedProduct, selectedSku)}
+1797:                          onClick={() => handleBuyNow(selectedProduct, selectedSku)}
+1969:          {!selectedProduct && !showBargainChat && (

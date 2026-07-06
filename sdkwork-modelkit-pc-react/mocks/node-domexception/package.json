@@ -1,0 +1,6 @@
+{
+  "name": "node-domexception",
+  "version": "1.0.0",
+  "description": "Empty polyfill to silence warnings",
+  "main": "index.js"
+}

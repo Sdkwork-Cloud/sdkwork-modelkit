@@ -1,0 +1,21 @@
+{
+  "back_to_skills": "返回技能列表",
+  "by": "由",
+  "manage_integration": "管理集成",
+  "install_skill": "安装技能",
+  "skill_store": "技能商店",
+  "publish": "发布",
+  "search_skills": "搜索技能...",
+  "sort_by": "排序",
+  "categories": "分类",
+  "agents": "代理机器人",
+  "all_agents": "所有代理",
+  "results": "结果",
+  "hide_suspicious": "隐藏可疑",
+  "list": "列表",
+  "grid": "网格",
+  "updated": "已更新",
+  "manage": "管理",
+  "install": "安装",
+  "txt_1145": "Source Code / 源码"
+}

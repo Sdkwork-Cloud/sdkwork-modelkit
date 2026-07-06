@@ -1,0 +1,86 @@
+{
+
+  "compilerOptions": {
+
+    "target": "ES2022",
+
+    "module": "ESNext",
+
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    "skipLibCheck": true,
+
+    "moduleResolution": "bundler",
+
+    "isolatedModules": true,
+
+    "moduleDetection": "force",
+
+    "jsx": "react-jsx",
+
+    "strict": true,
+
+    "noEmit": true,
+
+    "ignoreDeprecations": "6.0",
+
+    "allowImportingTsExtensions": true,
+
+    "allowSyntheticDefaultImports": true,
+
+    "esModuleInterop": true,
+
+    "resolveJsonModule": true,
+
+    "types": ["vite/client", "node"],
+
+    "baseUrl": ".",
+
+    "paths": {
+
+      "@sdkwork/utils": ["../../sdkwork-utils/packages/sdkwork-utils-typescript/src/index.ts"],
+
+      "@sdkwork/sdk-common": ["../../sdkwork-sdk-commons/sdkwork-sdk-common-typescript/dist/index.d.ts"],
+
+      "@sdkwork/iam-app-sdk": ["../../sdkwork-iam/sdks/sdkwork-iam-app-sdk/sdkwork-iam-app-sdk-typescript/src/index.ts"],
+
+      "@sdkwork/iam-backend-sdk": ["../../sdkwork-iam/sdks/sdkwork-iam-backend-sdk/sdkwork-iam-backend-sdk-typescript/src/index.ts"],
+
+      "@sdkwork/auth-pc-react": ["../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/index.ts"],
+
+      "@sdkwork/auth-runtime-pc-react": ["../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-runtime-pc-react/src/index.ts"],
+
+      "@sdkwork/drive-app-sdk": ["../../sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript/src/index.ts"],
+
+      "@sdkwork/ui-pc-react": ["../../sdkwork-ui/sdkwork-ui-pc-react/src/index.ts"],
+
+      "@sdkwork/ui-pc-react/theme": ["../../sdkwork-ui/sdkwork-ui-pc-react/src/theme/index.ts"],
+
+      "@sdkwork/modelkit-sdk-typescript": ["./sdks/sdkwork-modelkit-sdk-typescript/src/index.ts"],
+
+      "@sdkwork/modelkit-pc-core": ["./packages/sdkwork-modelkit-pc-core/src/index.ts"],
+
+      "@sdkwork/modelkit-pc-core/sdk": ["./packages/sdkwork-modelkit-pc-core/src/sdk/index.ts"],
+
+      "@sdkwork/modelkit-pc-core/host": ["./packages/sdkwork-modelkit-pc-core/src/host/index.ts"],
+
+      "@sdkwork/modelkit-pc-core/composition": ["./packages/sdkwork-modelkit-pc-core/src/composition/index.ts"],
+
+      "@sdkwork/modelkit-pc-core/session": ["./packages/sdkwork-modelkit-pc-core/src/session/index.ts"],
+
+      "@sdkwork/modelkit-pc-auth": ["./packages/sdkwork-modelkit-pc-auth/src/index.ts"],
+
+      "@sdkwork/modelkit-*": ["./packages/sdkwork-modelkit-*/src/index.ts"],
+
+      "@/*": ["./*"]
+
+    }
+
+  },
+
+  "include": ["src", "packages"],
+
+  "exclude": ["dist", "node_modules"]
+
+}
+

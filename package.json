@@ -1,0 +1,45 @@
+{
+  "name": "sdkwork-modelkit-workspace",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --service-layout unified-process --deployment-profile standalone",
+    "dev:browser": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --service-layout unified-process --deployment-profile standalone",
+    "gateway:run:standalone": "node scripts/run-modelkit-standalone-gateway.mjs",
+    "build": "cargo build --workspace && pnpm --filter @sdkwork/modelkit-pc-react run build",
+    "test": "pnpm topology:validate && pnpm test:contracts && pnpm --filter @sdkwork/modelkit-pc-react run test",
+    "check": "pnpm check:app-composition && cargo check --workspace && pnpm check:pnpm-script-standard && pnpm check:architecture-alignment && pnpm topology:validate && pnpm db:validate && pnpm check:api-envelope && pnpm api:check",
+    "verify": "cargo test --workspace && pnpm test && pnpm check",
+    "clean": "cargo clean && pnpm --filter @sdkwork/modelkit-pc-react run clean",
+    "check:pnpm-script-standard": "node ../sdkwork-specs/tools/check-pnpm-script-standard.mjs --root . --application-code-prefix modelkit",
+    "check:architecture-alignment": "node --test scripts/verify-modelkit-standard-architecture.test.mjs",
+    "check:app-composition": "node ../sdkwork-specs/tools/verify-repo.mjs --root .",
+    "check:api-envelope": "node ../sdkwork-specs/tools/check-api-response-envelope.mjs --workspace .",
+    "api:check": "node tools/modelkit_sdk_generate.mjs --check",
+    "api:materialize": "node scripts/sync-modelkit-api-framework-metadata.mjs",
+    "sdk:check": "node tools/modelkit_sdk_generate.mjs --check",
+    "sdk:generate": "node tools/modelkit_sdk_generate.mjs",
+    "topology:plan": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs plan --root . --spec specs/topology.spec.json",
+    "topology:validate": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs validate --root . --spec specs/topology.spec.json",
+    "test:contracts": "node --test scripts/verify-modelkit-contract-foundation.test.mjs",
+    "db:materialize:contract": "node ../sdkwork-specs/tools/materialize-database-contract-from-baseline.mjs --root . --baseline database/ddl/baseline/postgres/0001_modelkit_baseline.sql --module-id modelkit --owner modelkit-platform --prefixes mk_ --engines postgres,sqlite",
+    "db:validate": "node ../sdkwork-specs/tools/check-database-framework-standard.mjs --root .",
+    "db:plan": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . plan",
+    "db:init": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . init",
+    "db:migrate": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . migrate",
+    "db:seed": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . seed",
+    "db:status": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . status",
+    "db:drift": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift",
+    "db:drift:check": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift-check",
+    "db:bootstrap": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . bootstrap"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@sdkwork/modelkit-skillhub",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "react": "catalog:",
+    "lucide-react": "catalog:",
+    "@sdkwork/modelkit-pc-core": "workspace:*",
+    "@sdkwork/modelkit-types": "workspace:*",
+    "@sdkwork/modelkit-services": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  }
+}

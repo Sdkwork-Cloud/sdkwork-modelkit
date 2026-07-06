@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "workspace": "sdkwork-modelkit-app-sdk",
+  "title": "SDKWork Modelkit App API SDK",
+  "apiVersion": "0.1.0",
+  "openapiVersion": "3.1.2",
+  "authoritySpec": "../../apis/app-api/modelkit/modelkit-app-api.openapi.json",
+  "generationInputSpec": "../../apis/app-api/modelkit/modelkit-app-api.openapi.json",
+  "derivedSpecs": {
+    "default": "../../apis/app-api/modelkit/modelkit-app-api.openapi.json"
+  },
+  "sdkOwner": "sdkwork-modelkit",
+  "apiAuthority": "sdkwork-modelkit-app-api",
+  "discoverySurface": {
+    "sdkTarget": "app",
+    "apiPrefix": "/app/v3/api",
+    "schemaUrl": "/app/v3/openapi.json",
+    "generatedProtocols": [
+      "http-openapi"
+    ],
+    "manualTransports": []
+  },
+  "sdkDependencies": [
+    {
+      "workspace": "sdkwork-iam-app-sdk",
+      "role": "appbase-app-capability",
+      "required": true,
+      "dependencyMode": "consumer-sdk",
+      "apiPrefix": "/app/v3/api",
+      "apiAuthority": "sdkwork-iam-app-api",
+      "generatedTransportImportPolicy": "forbidden",
+      "packageByLanguage": {
+        "typescript": "@sdkwork/iam-app-sdk"
+      }
+    },
+    {
+      "workspace": "sdkwork-drive-app-sdk",
+      "role": "drive-app-file-capability",
+      "required": true,
+      "dependencyMode": "consumer-sdk",
+      "apiPrefix": "/app/v3/api",
+      "apiAuthority": "sdkwork-drive.app",
+      "generatedTransportImportPolicy": "forbidden",
+      "packageByLanguage": {
+        "typescript": "@sdkwork/drive-app-sdk"
+      }
+    }
+  ],
+  "languages": [
+    {
+      "language": "typescript",
+      "workspace": "sdkwork-modelkit-app-sdk-typescript",
+      "generationState": "declared",
+      "releaseState": "not_published",
+      "generatedPath": "sdkwork-modelkit-app-sdk-typescript/generated/server-openapi",
+      "manifestPath": "sdkwork-modelkit-app-sdk-typescript/generated/server-openapi/package.json",
+      "name": "@sdkwork-internal/modelkit-app-sdk-generated",
+      "version": "0.1.0",
+      "description": "Generator-owned TypeScript transport SDK for sdkwork-modelkit app API.",
+      "consumerSurface": {
+        "primaryClient": "SdkworkModelkitAppClient",
+        "apiPrefix": "/app/v3/api"
+      },
+      "consumerPackageName": "@sdkwork/modelkit-app-sdk",
+      "transportPackageName": "sdkwork-modelkit-app-sdk-generated-typescript"
+    }
+  ],
+  "sdkFamily": "sdkwork-modelkit-app-sdk",
+  "sdkName": "sdkwork-modelkit-app-sdk",
+  "packageName": "@sdkwork/modelkit-app-sdk",
+  "transportPackageName": "sdkwork-modelkit-app-sdk-generated-typescript"
+}

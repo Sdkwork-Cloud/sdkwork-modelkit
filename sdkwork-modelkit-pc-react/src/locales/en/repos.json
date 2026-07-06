@@ -1,0 +1,20 @@
+{
+  "discover": "Discover",
+  "repositories": "Repositories",
+  "search_repos": "Search repos...",
+  "featured": "Featured",
+  "categories": "Categories",
+  "submit_repo": "Submit Repo",
+  "txt_1020": "Git Clone Address",
+  "txt_1021": "Recommendation Reason",
+  "txt_1022": "About this repository",
+  "txt_1023": "Submit / Recommend Repository",
+  "txt_1024": "Git Repository URL",
+  "txt_1025": "Organization Name",
+  "txt_1026": "Repository Name",
+  "txt_1027": "Primary Language",
+  "txt_1028": "Category",
+  "txt_1029": "Short Description",
+  "txt_1030": "Why recommend this repository?",
+  "txt_1031": "Submitter Email (Optional)"
+}

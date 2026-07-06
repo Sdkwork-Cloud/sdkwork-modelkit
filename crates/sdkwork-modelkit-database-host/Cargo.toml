@@ -1,0 +1,12 @@
+[package]
+name = "sdkwork-modelkit-database-host"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+sdkwork-database-config.workspace = true
+sdkwork-modelkit-preferences-repository-sqlx.workspace = true
+sdkwork-modelkit-preferences-service.workspace = true
+sdkwork-modelkit-catalog-repository-sqlx.workspace = true
+sdkwork-modelkit-catalog-service.workspace = true
+sqlx.workspace = true

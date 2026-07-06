@@ -1,0 +1,20 @@
+{
+  "name": "@sdkwork/modelkit-services",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@sdkwork/modelkit-types": "workspace:*",
+    "@sdkwork/modelkit-pc-core": "workspace:*",
+    "@sdkwork/modelkit-sdk-typescript": "workspace:*",
+    "@sdkwork/utils": "workspace:*"
+  }
+}

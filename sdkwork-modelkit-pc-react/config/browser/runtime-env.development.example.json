@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "deploymentProfile": "standalone",
+  "applicationPublicHttpUrl": "http://127.0.0.1:3901",
+  "platformApiGatewayHttpUrl": "http://127.0.0.1:3901"
+}

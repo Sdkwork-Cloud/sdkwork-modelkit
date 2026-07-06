@@ -1,0 +1,55 @@
+{
+  "name": "@sdkwork/modelkit-pc-react",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "pnpm typecheck",
+    "test": "vitest run --passWithNoTests",
+    "clean": "node -e \"import('node:fs/promises').then(fs => fs.rm('dist', { recursive: true, force: true }))\""
+  },
+  "dependencies": {
+    "@google/genai": "^2.6.0",
+    "@hello-pangea/dnd": "^18.0.1",
+    "@monaco-editor/react": "^4.7.0",
+    "@sdkwork/auth-pc-react": "workspace:*",
+    "@sdkwork/modelkit-pc-auth": "workspace:*",
+    "@sdkwork/modelkit-pc-core": "workspace:*",
+    "@sdkwork/utils": "workspace:*",
+    "@tailwindcss/vite": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "i18next": "catalog:",
+    "i18next-browser-languagedetector": "^8.2.1",
+    "lucide-react": "catalog:",
+    "motion": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-i18next": "catalog:",
+    "sonner": "catalog:",
+    "tailwindcss": "catalog:",
+    "vite": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "clsx": "^2.1.1",
+    "typescript": "catalog:",
+    "vitest": "^4.1.2"
+  },
+  "overrides": {
+    "node-domexception": "file:mocks/node-domexception"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  }
+}

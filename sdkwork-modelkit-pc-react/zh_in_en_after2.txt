@@ -1,0 +1,315 @@
+Chinese in EN json: shop.json -> txt_1032: handleRemoveFromCart(item.product.id, item.selectedSku?.id)}
+                        className="text-[10px] text-text-muted hover:text-red-400 font-bold uppercase tracking-wider"
+                      >
+                        移除 (Remove)
+Chinese in EN json: shop.json -> txt_1033: 订单编号：
+Chinese in EN json: shop.json -> txt_1034: 交易成功
+Chinese in EN json: shop.json -> txt_1036: 您的专属数字卡密/API Key
+Chinese in EN json: shop.json -> txt_1037: 实体商品将发往下方地址
+Chinese in EN json: shop.json -> txt_1042: 9k+ 人想要
+Chinese in EN json: shop.json -> txt_1043: 提货
+Chinese in EN json: shop.json -> txt_1044: 申请商家入驻
+Chinese in EN json: shop.json -> txt_1045: 快速发布商品
+Chinese in EN json: shop.json -> txt_1046: 声明：店内的
+Chinese in EN json: shop.json -> txt_1047: 虚拟商品 (算力、充值包、密钥)
+Chinese in EN json: shop.json -> txt_1048: 经授权会即时产生可解密的单发券码，供您向服务端进行鉴权认证。
+Chinese in EN json: shop.json -> txt_1049: 实物周边及节点物理微机
+Chinese in EN json: shop.json -> txt_1050: 提供完整物流保价和售后维修承诺。
+Chinese in EN json: shop.json -> txt_1054: 在极客资产中搜索...
+Chinese in EN json: shop.json -> txt_1056: 申请商家入驻
+Chinese in EN json: shop.json -> txt_1057: 入驻成为极客资产商店商家，自由发布您的算力资源、API 服务、闲置物理极客终端设备或客制化周边。
+Chinese in EN json: shop.json -> txt_1058: 商家/团队名称
+Chinese in EN json: shop.json -> txt_1059: 经营类目
+Chinese in EN json: shop.json -> txt_1060: 算力资源与 API 服务
+Chinese in EN json: shop.json -> txt_1061: 二手闲置及硬件终端
+Chinese in EN json: shop.json -> txt_1062: 客制化开发板及周边
+Chinese in EN json: shop.json -> txt_1063: 资质证明 (可选)
+Chinese in EN json: shop.json -> txt_1064: 取消
+Chinese in EN json: shop.json -> txt_1065: 提交申请 (演示)
+Chinese in EN json: shop.json -> txt_1066: 例如：某某黑客工作室
+Chinese in EN json: shop.json -> txt_1067: GitHub 链接或个人网站
+Chinese in EN json: shop.json -> txt_1069: 快速发布商品
+Chinese in EN json: shop.json -> txt_1070: 商品名称*
+Chinese in EN json: shop.json -> txt_1072: 价格 (USDT/￥)*
+Chinese in EN json: shop.json -> txt_1074: 商品分类
+Chinese in EN json: shop.json -> txt_1075: 通用类目
+Chinese in EN json: shop.json -> txt_1076: API 充值与算力
+Chinese in EN json: shop.json -> txt_1077: 硬核物理终端
+Chinese in EN json: shop.json -> txt_1078: 安全代理加密
+Chinese in EN json: shop.json -> txt_1079: 商品图标 (Emoji)
+Chinese in EN json: shop.json -> txt_1081: 简短描述*
+Chinese in EN json: shop.json -> txt_1083: 发卡链接 / 外部购买链接 (选填)
+Chinese in EN json: shop.json -> txt_1084: 如果填写了外部链接，用户点击购买将直接跳转到该链接。
+Chinese in EN json: shop.json -> txt_1085: 详细功能特色 (每行一项)
+Chinese in EN json: shop.json -> txt_1087: 取消
+Chinese in EN json: shop.json -> txt_1088: 确认发布商品
+Chinese in EN json: shop.json -> txt_1089: 购买商品清单合计
+Chinese in EN json: shop.json -> txt_1090: 实付总计金额：
+Chinese in EN json: shop.json -> txt_1091: 实物派送收货地址 (SF Express)
+Chinese in EN json: shop.json -> txt_1092: 收货人：
+Chinese in EN json: shop.json -> txt_1094: 手机号码：
+Chinese in EN json: shop.json -> txt_1096: 详细配送地址：
+Chinese in EN json: shop.json -> txt_1098: 选择安全支付手段
+Chinese in EN json: shop.json -> txt_1099: 支付宝支付
+Chinese in EN json: shop.json -> txt_1100: 微信支付
+Chinese in EN json: shop.json -> txt_1101: 银联 / 信用卡
+Chinese in EN json: shop.json -> txt_1102: 取消
+Chinese in EN json: shop.json -> txt_1103: 确认订单并支付
+Chinese in EN json: shop.json -> txt_1104: 支付载体：
+Chinese in EN json: shop.json -> txt_1106: 应付总计：
+Chinese in EN json: shop.json -> txt_1107: 双向安全通道握手
+Chinese in EN json: shop.json -> txt_1108: 请使用电子钱包扫描二维码进行代开发
+Chinese in EN json: shop.json -> txt_1109: 该页面仅用于沙箱模拟联调测试，不会发生真实扣费 &nbsp;|&nbsp; 剩余有效时间
+Chinese in EN json: shop.json -> txt_1110: 模拟卡片号码 (Card Number)
+Chinese in EN json: shop.json -> txt_1111: 🛡️ 金融沙箱自备虚拟银行盾已默认代扣。直接点击下方“模拟支付完成”即可注入秘钥库验证。
+Chinese in EN json: shop.json -> txt_1112: 取消
+Chinese in EN json: shop.json -> txt_1113: 模拟支付完成
+Chinese in EN json: shop.json -> txt_1114: 正在向中转路由发出支付与发卡报文...
+Chinese in EN json: shop.json -> txt_1115: [SYS] 拦截中继信息，进行券码生成及订单分配中...
+Chinese in EN json: shop.json -> txt_1116: 交易安全交付成功！
+Chinese in EN json: shop.json -> txt_1117: 您的订单已被标记为成功交付。可在
+Chinese in EN json: shop.json -> txt_1118: 「订单记录」
+Chinese in EN json: shop.json -> txt_1119: 中任意时刻重复翻查、一键复制您的虚拟券码或同步顺丰物流轨迹。
+Chinese in EN json: shop.json -> txt_1120: 查看我的订单凭证
+Chinese in EN json: shop.json -> txt_1121: 关闭窗口
+Chinese in EN json: shop.json -> txt_1123: 返回商品列表
+Chinese in EN json: shop.json -> txt_1126: 规格选项
+Chinese in EN json: shop.json -> txt_1127: 前往 {product.merchantName || '外部商城'} 购买
+Chinese in EN json: shop.json -> txt_1128: 加购物车
+Chinese in EN json: shop.json -> txt_1129: 立即购买
+Chinese in EN json: shop.json -> txt_1130: 极客100%正品
+Chinese in EN json: shop.json -> txt_1131: 担保交易
+Chinese in EN json: shop.json -> txt_1132: 无忧售后
+Chinese in EN json: shop.json -> txt_1133: 商品详细剖析
+Chinese in EN json: shop.json -> txt_1134: 核心架构优势
+Chinese in EN json: shop.json -> txt_1135: 宝贝极客问答录
+Chinese in EN json: shop.json -> txt_1136: 还没有极客抛出技术难题
+Chinese in EN json: shop.json -> txt_1137: 你的首刀拷问，卖家将全速响应
+Chinese in EN json: shop.json -> txt_1138: 问
+Chinese in EN json: shop.json -> txt_1139: 答
+Chinese in EN json: shop.json -> txt_1141: 主理人正在火速手作答复中...
+Chinese in EN json: shop.json -> txt_1142: 发车核实
+Chinese in EN json: shop.json -> txt_1143: 技术履历 & 参数一览
+Chinese in EN json: shop.json -> txt_1144: 向买过的人求证，输入你的硬核疑问...
+Chinese in EN json: skillhub.json -> txt_1145: Source Code / 源码
+Chinese in EN json: software.json -> txt_1146: 一键安装
+Chinese in EN json: software.json -> txt_1147: Local Setup State / 本地安装状态
+Chinese in EN json: software.json -> txt_1148: Installed Locally (已安装)
+Chinese in EN json: software.json -> txt_1149: Not Installed (未安装)
+Chinese in EN json: software.json -> txt_1150: Connection State / 守护进程链接
+Chinese in EN json: software.json -> txt_1151: EDITOR'S PICK / 编辑推荐
+Chinese in EN json: workspace.json -> txt_1153: 权限级别:
+Chinese in EN json: workspace.json -> txt_1154: 根系统管理员 (Root)
+Chinese in EN json: workspace.json -> txt_1155: 用户信息
+Chinese in EN json: workspace.json -> txt_1156: 系统设置
+Chinese in EN json: workspace.json -> txt_1157: 订单记录
+Chinese in EN json: workspace.json -> txt_1158: 购物车
+Chinese in EN json: workspace.json -> txt_1159: 锁定会话
+Chinese in EN json: workspace.json -> txt_1167: 组件工具
+Chinese in EN json: workspace.json -> txt_1168: 加载中...
+Chinese in EN json: workspace.json -> txt_1169: 没有找到匹配组件
+Chinese in EN json: workspace.json -> txt_1170: 中转节点列表
+Chinese in EN json: workspace.json -> txt_1171: 暂无可用路由节点
+Chinese in EN json: workspace.json -> txt_1172: 本地密钥配置
+Chinese in EN json: workspace.json -> txt_1173: 配置面板
+Chinese in EN json: workspace.json -> txt_1174: 寻找组件...
+Chinese in EN json: workspace.json -> txt_1175: Api Key 管理
+Chinese in EN json: workspace.json -> txt_1178: 一键安装
+Chinese in EN json: workspace.json -> txt_1179: 已安装 (Installed)
+Chinese in EN json: workspace.json -> txt_1181: 活动中 (Active Node)
+Chinese in EN json: workspace.json -> txt_1182: 系统部署向导 / Setup Wizard
+Chinese in EN json: workspace.json -> txt_1183: 正在部署 {installType === 'cli' ? 'CLI 命令行守护进程' : 'Desktop 桌面窗口核心'} 到您的工作空间流中
+Chinese in EN json: workspace.json -> txt_1184: 传输速度 / Rate
+Chinese in EN json: workspace.json -> txt_1185: 配置类型 / Arch
+Chinese in EN json: workspace.json -> txt_1186: 进程状态 / Thread
+Chinese in EN json: workspace.json -> txt_1187: 底层端口 / Port
+Chinese in EN json: workspace.json -> txt_1188: 部署 {activeTool.name} 环境
+Chinese in EN json: workspace.json -> txt_1189: 该组件目前由于缺少本地依赖运行时配置而处于未安装状态，请在下方选择合适的端部署方式。
+Chinese in EN json: workspace.json -> txt_1190: CLI 命令行终端工具
+Chinese in EN json: workspace.json -> txt_1191: 基于 Node.js 精简内核发布、通过 npm 部署。占用极其微小的运存，常驻物理核心，适合高效率全键盘工作流。
+Chinese in EN json: workspace.json -> txt_1192: 可执行指令:
+Chinese in EN json: workspace.json -> txt_1193: 立即配置 &rarr;
+Chinese in EN json: workspace.json -> txt_1194: Desktop GUI 桌面可视化客户端
+Chinese in EN json: workspace.json -> txt_1195: 独立可交互可视化应用程序，配备托盘控制面板与后台自动驻留配置。适合对全局图形视窗有要求的开发者。
+Chinese in EN json: workspace.json -> txt_1196: 应用程序大小:
+Chinese in EN json: workspace.json -> txt_1197: 立即配置 &rarr;
+Chinese in EN json: workspace.json -> txt_1198: 系统环境前置校验 / System Pre-checks
+Chinese in EN json: workspace.json -> txt_1199: 操作系统兼容性
+Chinese in EN json: workspace.json -> txt_1200: Node.js Toolkit 运行时
+Chinese in EN json: workspace.json -> txt_1201: 本地 3000 端口接续
+Chinese in EN json: workspace.json -> txt_1202: 一键启动部署引导
+Chinese in EN json: workspace.json -> txt_1204: 密钥名称
+Chinese in EN json: workspace.json -> txt_1205: API 密钥值 (API Key)
+Chinese in EN json: workspace.json -> txt_1207: 自定义端点 (Base URL - 可选)
+Chinese in EN json: workspace.json -> txt_1209: 取消
+Chinese in EN json: workspace.json -> txt_1210: 保存
+Chinese in EN json: workspace.json -> txt_1211: 选择安装方式 / Install Mode
+Chinese in EN json: workspace.json -> txt_1212: 请为
+Chinese in EN json: workspace.json -> txt_1213: 选择适合您系统架构与偏好的安装模式：
+Chinese in EN json: workspace.json -> txt_1214: CLI 命令行终端工具 / Command Line Tool
+Chinese in EN json: workspace.json -> txt_1215: 基于命令行的轻量无界面守护进程运行，可通过系统 Terminal 指令（CLI）直接调用，具备极高的部署运行灵活性。
+Chinese in EN json: workspace.json -> txt_1216: Desktop 桌面端窗口 / GUI Application
+Chinese in EN json: workspace.json -> txt_1217: 启动原生桌面容器支持，自动处理后台依赖并接管网络通道，具备完整的图形操作面板与状态托盘。
+Chinese in EN json: workspace.json -> txt_1218: 取消 / Cancel
+Chinese in EN json: workspace.json -> txt_1221: 名称
+Chinese in EN json: workspace.json -> txt_1222: OpenAI 地址
+Chinese in EN json: workspace.json -> txt_1224: Anthropic 地址
+Chinese in EN json: workspace.json -> txt_1226: 模型 ID
+Chinese in EN json: workspace.json -> txt_1227: API 密钥
+Chinese in EN json: workspace.json -> txt_1229: 取消
+Chinese in EN json: workspace.json -> txt_1230: 保存
+Chinese in EN json: workspace.json -> txt_1231: 取消 VIP 订阅
+Chinese in EN json: workspace.json -> txt_1232: 您确定要取消 VIP 旗舰订阅服务吗？取消后部分高阶模型及多节点专线将会降级。
+Chinese in EN json: workspace.json -> txt_1233: 保留订阅
+Chinese in EN json: workspace.json -> txt_1234: 确认取消
+Chinese in EN json: workspace.json -> txt_1237: 当前上下文
+Chinese in EN json: workspace.json -> txt_1239: 接入参数
+Chinese in EN json: workspace.json -> txt_1240: 自定义配置
+Chinese in EN json: workspace.json -> txt_1241: 自定义配置
+Chinese in EN json: workspace.json -> txt_1244: 管理与测速
+Chinese in EN json: workspace.json -> txt_1246: API 格式
+Chinese in EN json: workspace.json -> txt_1247: Anthropic Messages (原生)
+Chinese in EN json: workspace.json -> txt_1248: OpenAI Format (代理转换)
+Chinese in EN json: workspace.json -> txt_1249: 选择供应商 API 的输入格式
+Chinese in EN json: workspace.json -> txt_1250: 认证字段
+Chinese in EN json: workspace.json -> txt_1251: ANTHROPIC_AUTH_TOKEN (默认)
+Chinese in EN json: workspace.json -> txt_1252: 选择写入配置的认证环境变量名
+Chinese in EN json: workspace.json -> txt_1253: 主模型
+Chinese in EN json: workspace.json -> txt_1254: 推理模型 (Thinking)
+Chinese in EN json: workspace.json -> txt_1255: Haiku 默认模型
+Chinese in EN json: workspace.json -> txt_1256: Sonnet 默认模型
+Chinese in EN json: workspace.json -> txt_1257: Opus 默认模型
+Chinese in EN json: workspace.json -> txt_1258: 可选: 指定默认使用的 Claude 模型，留空则使用系统默认。
+Chinese in EN json: workspace.json -> txt_1259: 模型名称
+Chinese in EN json: workspace.json -> txt_1260: 指定使用的模型，将自动更新到 config.toml 中
+Chinese in EN json: workspace.json -> txt_1262: 智能网关 Inbound 拦截管理器
+Chinese in EN json: workspace.json -> txt_1263: 检测到入站深度生态链配置，执行策略模式自适应挂载
+Chinese in EN json: workspace.json -> txt_1264: 生态共享秘钥载荷
+Chinese in EN json: workspace.json -> txt_1265: 同步实例命名 (Target Name):
+Chinese in EN json: workspace.json -> txt_1266: 接口端点 (Endpoint BaseUrl):
+Chinese in EN json: workspace.json -> txt_1268: 同步描述 (Payload Desc):
+Chinese in EN json: workspace.json -> txt_1270: 密钥本体 (Credentials):
+Chinese in EN json: workspace.json -> txt_1271: 已同步挂载到本地管理组
+Chinese in EN json: workspace.json -> txt_1272: 导入并注册该密钥到本应用
+Chinese in EN json: workspace.json -> txt_1273: 3. 选择针对特定工具的配置策略
+Chinese in EN json: workspace.json -> txt_1274: 派发策略
+Chinese in EN json: workspace.json -> txt_1275: 编译通过：已经挂载至虚拟文件沙箱
+Chinese in EN json: workspace.json -> txt_1277: 端侧加密、安全合规
+Chinese in EN json: workspace.json -> txt_1279: 封包深度诊断
+Chinese in EN json: workspace.json -> txt_1280: 关闭
+Chinese in EN json: workspace.json -> txt_1281: 本次会话时间:
+Chinese in EN json: workspace.json -> txt_1282: 报文唯一哈希:
+Chinese in EN json: workspace.json -> txt_1283: 接口服务商 (Provider):
+Chinese in EN json: workspace.json -> txt_1285: 调用模型 (Model ID):
+Chinese in EN json: workspace.json -> txt_1287: 执行耗时:
+Chinese in EN json: workspace.json -> txt_1288: 通信节点IP:
+Chinese in EN json: workspace.json -> txt_1289: 请求参数载荷
+Chinese in EN json: workspace.json -> txt_1290: 中转响应文书
+Chinese in EN json: workspace.json -> txt_1291: 主控网卡解密审计
+Chinese in EN json: workspace.json -> txt_1293: 嗅探
+Chinese in EN json: workspace.json -> txt_1294: 模拟载荷
+Chinese in EN json: workspace.json -> txt_1295: 搜索路径，工具，模型...
+Chinese in EN json: workspace.json -> txt_1296: 清空记录
+Chinese in EN json: workspace.json -> txt_1298: 分析区间
+Chinese in EN json: workspace.json -> txt_1300: 导出报表
+Chinese in EN json: workspace.json -> txt_1301: 所有的中转网关节点
+Chinese in EN json: workspace.json -> txt_1302: 每秒并发 (QPS):
+Chinese in EN json: workspace.json -> txt_1303: 按模型消耗占比
+Chinese in EN json: workspace.json -> txt_1304: 各类模型在总运行中的份额分配
+Chinese in EN json: workspace.json -> txt_1307: 今日
+Chinese in EN json: workspace.json -> txt_1308: 汇总
+Chinese in EN json: workspace.json -> txt_1309: 昨日
+Chinese in EN json: workspace.json -> txt_1310: 当月
+Chinese in EN json: workspace.json -> txt_1311: 预估使用金额
+Chinese in EN json: workspace.json -> txt_1312: 请求发生量
+Chinese in EN json: workspace.json -> txt_1313: Token 消耗量
+Chinese in EN json: workspace.json -> txt_1314: 网关性能 (耗时/成功)
+Chinese in EN json: workspace.json -> txt_1318: 请求
+Chinese in EN json: workspace.json -> txt_1319: 请求量:
+Chinese in EN json: workspace.json -> txt_1321: Token 吞吐:
+Chinese in EN json: workspace.json -> txt_1322: 平均延迟:
+Chinese in EN json: workspace.json -> txt_1325: 本地存储与包体资源
+Chinese in EN json: workspace.json -> txt_1326: 路由包体与镜像快照缓存
+Chinese in EN json: workspace.json -> txt_1327: 本地存储空间已分配：
+Chinese in EN json: workspace.json -> txt_1328: )}
+                清空文件缓存
+Chinese in EN json: workspace.json -> txt_1330: 个人开发者中心
+Chinese in EN json: workspace.json -> txt_1331: VIP 旗舰
+Chinese in EN json: workspace.json -> txt_1332: 运行节点身份
+Chinese in EN json: workspace.json -> txt_1333: 开发者哈希号 / ID
+Chinese in EN json: workspace.json -> txt_1335: 当前您正在开发调试状态下运行，具有网卡穿透、本地 Daemon 守护进程下发控制及 API Key 密钥热装载等全栈系统权限。
+Chinese in EN json: workspace.json -> txt_1336: 独立 API 访问凭据管理
+Chinese in EN json: workspace.json -> txt_1340: 收银台 - 核对订阅清单
+Chinese in EN json: workspace.json -> txt_1341: 商品名称：
+Chinese in EN json: workspace.json -> txt_1342: 订阅周期：
+Chinese in EN json: workspace.json -> txt_1344: 应付总计：
+Chinese in EN json: workspace.json -> txt_1345: 选择安全支付载体
+Chinese in EN json: workspace.json -> txt_1346: 支付宝支付
+Chinese in EN json: workspace.json -> txt_1347: 微信支付
+Chinese in EN json: workspace.json -> txt_1348: 银联 / 信用卡
+Chinese in EN json: workspace.json -> txt_1349: 双向安全加密通信中
+Chinese in EN json: workspace.json -> txt_1350: 请使用{paymentMethod === 'alipay' ? '支付宝' : '微信'}扫描二维码完成支付
+Chinese in EN json: workspace.json -> txt_1351: 该页面仅用于沙箱模拟联调测试，不会发生真实扣费 &nbsp;|&nbsp; 剩余有效时间
+Chinese in EN json: workspace.json -> txt_1352: 卡片号码 (Card Number)
+Chinese in EN json: workspace.json -> txt_1353: 有效截期 (Expiry)
+Chinese in EN json: workspace.json -> txt_1354: 安全数字码 (CVV)
+Chinese in EN json: workspace.json -> txt_1355: 🛡️ 金融沙箱环境已默认代扣。直接点击下方“模拟支付完成”即可注入秘钥库验证。
+Chinese in EN json: workspace.json -> txt_1356: 正在向网关安全套接字发送支付鉴权...
+Chinese in EN json: workspace.json -> txt_1357: [INFO] 正在写入本地 Immutable 密钥组及配额配给...
+Chinese in EN json: workspace.json -> txt_1358: 尊享开发者订阅特权开通成功！
+Chinese in EN json: workspace.json -> txt_1359: 感谢您支持 ModelKit 生态系统建设！您的全局物理路由 QPS 限额已提升至最高档，全网高级模型矩阵已无障碍完全装配就绪。
+Chinese in EN json: workspace.json -> txt_1360: 已热装载 VIP 密钥凭据。再次向网关发起请求时免于降级限制。
+Chinese in EN json: workspace.json -> txt_1361: 开始尊享特权
+Chinese in EN json: workspace.json -> txt_1362: 金融级 AES-256 私钥保障
+Chinese in EN json: workspace.json -> txt_1363: 取消订单
+Chinese in EN json: workspace.json -> txt_1364: 模拟支付完成
+Chinese in EN json: workspace.json -> txt_1365: 已开启尊享会员
+Chinese in EN json: workspace.json -> txt_1366: 升级 ModelKit VIP 旗舰版
+Chinese in EN json: workspace.json -> txt_1367: 极智延迟，大厂高并发大模型免排队专线。通过升级为您解锁全场景无限量高级模型连接，免去频繁的环境鉴权干扰。
+Chinese in EN json: workspace.json -> txt_1370: 省30%
+Chinese in EN json: workspace.json -> txt_1371: 您目前已开通
+Chinese in EN json: workspace.json -> txt_1373: 尊享会员
+Chinese in EN json: workspace.json -> txt_1374: 核心链路已成功切换至 VIP 高带宽专属对等中转节点。
+Chinese in EN json: workspace.json -> txt_1375: onNavigate?.('user-profile')}
+                className="px-5 py-2.5 rounded-xl text-xs font-bold bg-divider border border-divider-strong hover:bg-neutral-800 text-text-main transition-colors cursor-pointer"
+              >
+                前往个人中心
+Chinese in EN json: workspace.json -> txt_1376: 取消订阅
+Chinese in EN json: workspace.json -> txt_1378: 包含特权权益 :
+Chinese in EN json: workspace.json -> txt_1380: 毫秒级连接率
+Chinese in EN json: workspace.json -> txt_1381: 骨干机房对等节点，平均降低接口延迟 35% 以上
+Chinese in EN json: workspace.json -> txt_1382: 金融级数据安全
+Chinese in EN json: workspace.json -> txt_1383: 双向多通道高密度加密链路传输，对请求报文严格清洗
+Chinese in EN json: workspace.json -> txt_1384: 无额外资源溢出度
+Chinese in EN json: workspace.json -> txt_1385: 智能压缩多路，自动命中重复提示词，降本高至 40%
+Chinese in EN json: workspace.json -> txt_1386: 多组别开发者互认
+Chinese in EN json: workspace.json -> txt_1387: 多节点自动热灾备与主备切换，保持常备调试通顺
+Chinese in EN json: workspace.json -> txt_1388: 企业级物理路由节点自建承诺
+Chinese in EN json: workspace.json -> txt_1389: 支持能力维度
+Chinese in EN json: workspace.json -> txt_1390: 免费标准版
+Chinese in EN json: workspace.json -> txt_1391: 旗舰开发者专业版 (推荐)
+Chinese in EN json: workspace.json -> txt_1392: 私有化企业版
+Chinese in EN json: workspace.json -> txt_1393: 最大物理挂载节点数
+Chinese in EN json: workspace.json -> txt_1394: 1 个代理节点
+Chinese in EN json: workspace.json -> txt_1395: 无限物理隧道负载
+Chinese in EN json: workspace.json -> txt_1396: 按集群物理台数授权
+Chinese in EN json: workspace.json -> txt_1397: 主流大模型涵盖面
+Chinese in EN json: workspace.json -> txt_1398: 经典 GPT-4o-mini 等 5 款
+Chinese in EN json: workspace.json -> txt_1399: 全模型矩阵 (o3-mini, Claude Real)
+Chinese in EN json: workspace.json -> txt_1400: 包括定制化私有大模型、LoRA挂载
+Chinese in EN json: workspace.json -> txt_1401: 通信专线质量 SLA
+Chinese in EN json: workspace.json -> txt_1402: 公网默认中转 (不保证在线)
+Chinese in EN json: workspace.json -> txt_1403: VIP 亚太及欧美骨干专线自适应
+Chinese in EN json: workspace.json -> txt_1404: 专属独立中继代理器 99.99%
+Chinese in EN json: workspace.json -> txt_1405: 日常 API 限流阈值
+Chinese in EN json: workspace.json -> txt_1406: 300 次调用 / 1G 数据限制
+Chinese in EN json: workspace.json -> txt_1407: 全无限次网关通信调阅
+Chinese in EN json: workspace.json -> txt_1408: 无并发无配额限制
+Chinese in EN json: workspace.json -> txt_1409: 故障响应与支持
+Chinese in EN json: workspace.json -> txt_1410: 社群排排队协助
+Chinese in EN json: workspace.json -> txt_1411: 2 小时工单专家诊断
+Chinese in EN json: workspace.json -> txt_1412: 15 分钟 SLA 级专人支持 / 电话直连
+Chinese in EN json: workspace.json -> txt_1033: 由于当前环境挂接了本地 Node.js 守护进程（Daemon
+            Co-process），本端支持实时包体完整度校验。若响应超时，请确认底端
+            Provider 与本地密钥参数未曾过期。
+Found 305 keys with Chinese in EN locales.

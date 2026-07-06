@@ -1,0 +1,17 @@
+{
+  "discover_catalog": "返回目录",
+  "software_app": "软件中心",
+  "search_software": "搜索软件...",
+  "discover": "发现",
+  "featured_shop": "推荐商店",
+  "categories": "分类",
+  "submit_software": "提交软件",
+  "explore_applications": "发现应用",
+  "apps_found": "结果",
+  "txt_1146": "一键安装",
+  "txt_1147": "Local Setup State / 本地安装状态",
+  "txt_1148": "Installed Locally (已安装)",
+  "txt_1149": "Not Installed (未安装)",
+  "txt_1150": "Connection State / 守护进程链接",
+  "txt_1151": "EDITOR'S PICK / 编辑推荐"
+}

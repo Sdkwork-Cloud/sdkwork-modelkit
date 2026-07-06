@@ -1,0 +1,19 @@
+{
+  "prompts_title": "Prompt Engine",
+  "prompts_desc": "Multi-modal system prompt collection for advanced creators",
+  "search_placeholder": "Search prompts...",
+  "type_all": "All",
+  "type_text": "Text Prompts",
+  "type_agent": "Agents",
+  "type_image": "Image Prompts",
+  "type_video": "Video Prompts",
+  "type_music": "Music Prompts",
+  "type_sound": "Sound Prompts",
+  "btn_copy": "Copy Prompt",
+  "btn_use": "Use",
+  "views_count": "{count} used",
+  "liked": "Liked",
+  "author": "By: ",
+  "no_results": "No matching prompts found",
+  "copied": "Prompt copied to clipboard!"
+}
