@@ -41,5 +41,5 @@ pub struct CatalogListQueryParams {
     pub category: Option<String>,
     pub q: Option<String>,
     pub offset: Option<i64>,
-    pub limit: Option<i64>,
+    pub page_size: Option<i64>,
 }

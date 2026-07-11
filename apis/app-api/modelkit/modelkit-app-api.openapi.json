@@ -5,18 +5,27 @@
     "version": "0.1.0",
     "description": "Modelkit app-api for tenant-scoped preferences, marketplace catalog, and commerce wallet state. Success bodies use SdkWorkApiResponse; errors use ProblemDetail."
   },
-  "servers": [{ "url": "/app/v3/api", "description": "SDKWork App API root" }],
+  "servers": [
+    {
+      "url": "/app/v3/api",
+      "description": "SDKWork App API root"
+    }
+  ],
   "paths": {
     "/app/v3/api/modelkit/preferences/{namespace}": {
       "get": {
         "operationId": "preferences.get",
-        "tags": ["modelkit"],
+        "tags": [
+          "modelkit"
+        ],
         "parameters": [
           {
             "name": "namespace",
             "in": "path",
             "required": true,
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -26,16 +35,24 @@
               "application/json": {
                 "schema": {
                   "allOf": [
-                    { "$ref": "#/components/schemas/SdkWorkApiResponse" },
+                    {
+                      "$ref": "#/components/schemas/SdkWorkApiResponse"
+                    },
                     {
                       "type": "object",
-                      "required": ["data"],
+                      "required": [
+                        "data"
+                      ],
                       "properties": {
                         "data": {
                           "type": "object",
-                          "required": ["item"],
+                          "required": [
+                            "item"
+                          ],
                           "properties": {
-                            "item": { "$ref": "#/components/schemas/PreferenceRecord" }
+                            "item": {
+                              "$ref": "#/components/schemas/PreferenceRecord"
+                            }
                           }
                         }
                       }
@@ -45,27 +62,35 @@
               }
             }
           },
-          "default": { "$ref": "#/components/responses/ProblemDetailResponse" }
+          "default": {
+            "$ref": "#/components/responses/ProblemDetailResponse"
+          }
         },
         "x-sdkwork-api-surface": "app-api",
         "x-sdkwork-permission": "modelkit.preferences.read"
       },
       "put": {
         "operationId": "preferences.put",
-        "tags": ["modelkit"],
+        "tags": [
+          "modelkit"
+        ],
         "parameters": [
           {
             "name": "namespace",
             "in": "path",
             "required": true,
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/PutPreferenceRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/PutPreferenceRequest"
+              }
             }
           }
         },
@@ -76,16 +101,24 @@
               "application/json": {
                 "schema": {
                   "allOf": [
-                    { "$ref": "#/components/schemas/SdkWorkApiResponse" },
+                    {
+                      "$ref": "#/components/schemas/SdkWorkApiResponse"
+                    },
                     {
                       "type": "object",
-                      "required": ["data"],
+                      "required": [
+                        "data"
+                      ],
                       "properties": {
                         "data": {
                           "type": "object",
-                          "required": ["item"],
+                          "required": [
+                            "item"
+                          ],
                           "properties": {
-                            "item": { "$ref": "#/components/schemas/PreferenceRecord" }
+                            "item": {
+                              "$ref": "#/components/schemas/PreferenceRecord"
+                            }
                           }
                         }
                       }
@@ -95,48 +128,118 @@
               }
             }
           },
-          "default": { "$ref": "#/components/responses/ProblemDetailResponse" }
+          "default": {
+            "$ref": "#/components/responses/ProblemDetailResponse"
+          }
         },
         "x-sdkwork-api-surface": "app-api",
         "x-sdkwork-permission": "modelkit.preferences.write"
       }
-    }
-    ,
+    },
     "/app/v3/api/modelkit/catalog/{domain}/items": {
       "get": {
         "operationId": "catalog.items.list",
-        "tags": ["modelkit"],
+        "tags": [
+          "modelkit"
+        ],
         "parameters": [
-          { "name": "domain", "in": "path", "required": true, "schema": { "type": "string" } },
-          { "name": "category", "in": "query", "schema": { "type": "string" } },
-          { "name": "q", "in": "query", "schema": { "type": "string" } },
-          { "name": "offset", "in": "query", "schema": { "type": "integer", "format": "int64" } },
-          { "name": "limit", "in": "query", "schema": { "type": "integer", "format": "int64" } }
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "maximum": 200
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Catalog items.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SdkWorkApiResponse" } } } },
-          "default": { "$ref": "#/components/responses/ProblemDetailResponse" }
+          "200": {
+            "description": "Catalog items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkWorkApiResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/ProblemDetailResponse"
+          }
         },
         "x-sdkwork-api-surface": "app-api",
         "x-sdkwork-permission": "modelkit.catalog.read"
       },
       "post": {
         "operationId": "catalog.items.create",
-        "tags": ["modelkit"],
+        "tags": [
+          "modelkit"
+        ],
         "parameters": [
-          { "name": "domain", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateCatalogItemRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/CreateCatalogItemRequest"
+              }
             }
           }
         },
         "responses": {
-          "201": { "description": "Created catalog item.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SdkWorkApiResponse" } } } },
-          "default": { "$ref": "#/components/responses/ProblemDetailResponse" }
+          "201": {
+            "description": "Created catalog item.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkWorkApiResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/ProblemDetailResponse"
+          }
         },
         "x-sdkwork-api-surface": "app-api",
         "x-sdkwork-permission": "modelkit.catalog.write"
@@ -145,36 +248,92 @@
     "/app/v3/api/modelkit/catalog/{domain}/items/{itemId}": {
       "get": {
         "operationId": "catalog.items.get",
-        "tags": ["modelkit"],
+        "tags": [
+          "modelkit"
+        ],
         "parameters": [
-          { "name": "domain", "in": "path", "required": true, "schema": { "type": "string" } },
-          { "name": "itemId", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Catalog item.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SdkWorkApiResponse" } } } },
-          "default": { "$ref": "#/components/responses/ProblemDetailResponse" }
+          "200": {
+            "description": "Catalog item.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkWorkApiResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/ProblemDetailResponse"
+          }
         },
         "x-sdkwork-api-surface": "app-api",
         "x-sdkwork-permission": "modelkit.catalog.read"
       },
       "patch": {
         "operationId": "catalog.items.patch",
-        "tags": ["modelkit"],
+        "tags": [
+          "modelkit"
+        ],
         "parameters": [
-          { "name": "domain", "in": "path", "required": true, "schema": { "type": "string" } },
-          { "name": "itemId", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/PatchCatalogItemRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/PatchCatalogItemRequest"
+              }
             }
           }
         },
         "responses": {
-          "200": { "description": "Updated catalog item.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SdkWorkApiResponse" } } } },
-          "default": { "$ref": "#/components/responses/ProblemDetailResponse" }
+          "200": {
+            "description": "Updated catalog item.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkWorkApiResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/ProblemDetailResponse"
+          }
         },
         "x-sdkwork-api-surface": "app-api",
         "x-sdkwork-permission": "modelkit.catalog.write"
@@ -183,13 +342,33 @@
     "/app/v3/api/modelkit/catalog/{domain}/categories": {
       "get": {
         "operationId": "catalog.categories.list",
-        "tags": ["modelkit"],
+        "tags": [
+          "modelkit"
+        ],
         "parameters": [
-          { "name": "domain", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
-          "200": { "description": "Catalog categories.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SdkWorkApiResponse" } } } },
-          "default": { "$ref": "#/components/responses/ProblemDetailResponse" }
+          "200": {
+            "description": "Catalog categories.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkWorkApiResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/ProblemDetailResponse"
+          }
         },
         "x-sdkwork-api-surface": "app-api",
         "x-sdkwork-permission": "modelkit.catalog.read"
@@ -200,73 +379,139 @@
     "schemas": {
       "SdkWorkApiResponse": {
         "type": "object",
-        "required": ["code", "data", "traceId"],
+        "required": [
+          "code",
+          "data",
+          "traceId"
+        ],
         "properties": {
-          "code": { "type": "integer", "format": "int32", "enum": [0] },
-          "data": { "type": "object" },
-          "traceId": { "type": "string" }
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+              0
+            ]
+          },
+          "data": {
+            "type": "object"
+          },
+          "traceId": {
+            "type": "string"
+          }
         }
       },
       "PreferenceRecord": {
         "type": "object",
-        "required": ["namespace", "payload", "version"],
+        "required": [
+          "namespace",
+          "payload",
+          "version"
+        ],
         "properties": {
           "namespace": {
             "type": "string",
             "description": "Allowed: workspace.api_keys, workspace.relays, workspace.providers, workspace.request_logs, workspace.vip, workspace.agents, workspace.resources, workspace.agent_tools, account.billing, account.api_keys, user.profile, system.settings, shop.cart, shop.orders, ui.settings"
           },
           "payload": {},
-          "version": { "type": "integer", "format": "int64" }
+          "version": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       },
       "PutPreferenceRequest": {
         "type": "object",
-        "required": ["payload"],
+        "required": [
+          "payload"
+        ],
         "properties": {
           "payload": {}
         }
       },
       "CatalogItemRecord": {
         "type": "object",
-        "required": ["itemId", "domain", "category", "payload", "version"],
+        "required": [
+          "itemId",
+          "domain",
+          "category",
+          "payload",
+          "version"
+        ],
         "properties": {
-          "itemId": { "type": "string" },
+          "itemId": {
+            "type": "string"
+          },
           "domain": {
             "type": "string",
             "description": "Allowed: skillhub, plugins, relay, software, repos, news, shop, prompts"
           },
-          "category": { "type": "string" },
+          "category": {
+            "type": "string"
+          },
           "payload": {},
-          "driveObjectRef": { "type": "string" },
-          "version": { "type": "integer", "format": "int64" }
+          "driveObjectRef": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int64"
+          }
         }
       },
       "CreateCatalogItemRequest": {
         "type": "object",
-        "required": ["category", "payload"],
+        "required": [
+          "category",
+          "payload"
+        ],
         "properties": {
-          "category": { "type": "string" },
+          "category": {
+            "type": "string"
+          },
           "payload": {},
-          "driveObjectRef": { "type": "string" }
+          "driveObjectRef": {
+            "type": "string"
+          }
         }
       },
       "PatchCatalogItemRequest": {
         "type": "object",
-        "required": ["payload"],
+        "required": [
+          "payload"
+        ],
         "properties": {
           "payload": {}
         }
       },
       "ProblemDetail": {
         "type": "object",
-        "required": ["type", "title", "status", "code", "traceId"],
+        "required": [
+          "type",
+          "title",
+          "status",
+          "code",
+          "traceId"
+        ],
         "properties": {
-          "type": { "type": "string" },
-          "title": { "type": "string" },
-          "status": { "type": "integer" },
-          "code": { "type": "integer", "format": "int32" },
-          "traceId": { "type": "string" },
-          "detail": { "type": "string" }
+          "type": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
         }
       }
     },
@@ -275,7 +520,9 @@
         "description": "Problem detail error.",
         "content": {
           "application/problem+json": {
-            "schema": { "$ref": "#/components/schemas/ProblemDetail" }
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetail"
+            }
           }
         }
       }

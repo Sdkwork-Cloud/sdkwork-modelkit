@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.iam.module",
+  "moduleId": "modelkit",
+  "domain": "modelkit",
+  "permissions": {
+    "catalog": [
+      {
+        "code": "modelkit.catalog.read",
+        "description": "Permission modelkit.catalog.read",
+        "source": "openapi"
+      },
+      {
+        "code": "modelkit.catalog.write",
+        "description": "Permission modelkit.catalog.write",
+        "source": "openapi"
+      },
+      {
+        "code": "modelkit.preferences.read",
+        "description": "Permission modelkit.preferences.read",
+        "source": "openapi"
+      },
+      {
+        "code": "modelkit.preferences.write",
+        "description": "Permission modelkit.preferences.write",
+        "source": "openapi"
+      }
+    ]
+  }
+}

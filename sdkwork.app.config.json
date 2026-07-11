@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 3,
+  "kind": "sdkwork.app",
+  "app": {
+    "key": "sdkwork-modelkit",
+    "name": "sdkwork-modelkit"
+  },
+  "runtime": {
+    "supportedDeploymentProfiles": [
+      "standalone",
+      "cloud"
+    ],
+    "defaultDeploymentProfile": "cloud"
+  }
+}
