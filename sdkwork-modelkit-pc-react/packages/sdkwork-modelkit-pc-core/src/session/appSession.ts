@@ -17,12 +17,13 @@ function normalizeBearerToken(value: unknown): string | undefined {
 }
 
 export function readModelkitAppSessionTokens(): ModelkitAppSessionTokens {
-  if (typeof sessionStorage === 'undefined') {
+  const storage = resolvePersistentStorage();
+  if (!storage) {
     return {};
   }
 
   try {
-    const raw = sessionStorage.getItem(MODELKIT_APP_SESSION_STORAGE_KEY);
+    const raw = storage.getItem(MODELKIT_APP_SESSION_STORAGE_KEY);
     if (!raw) {
       return {};
     }
@@ -38,7 +39,8 @@ export function readModelkitAppSessionTokens(): ModelkitAppSessionTokens {
 }
 
 export function persistModelkitAppSessionTokens(tokens: ModelkitAppSessionTokens): void {
-  if (typeof sessionStorage === 'undefined') {
+  const storage = resolvePersistentStorage();
+  if (!storage) {
     return;
   }
 
@@ -49,17 +51,31 @@ export function persistModelkitAppSessionTokens(tokens: ModelkitAppSessionTokens
   };
 
   if (!payload.accessToken && !payload.authToken && !payload.refreshToken) {
-    sessionStorage.removeItem(MODELKIT_APP_SESSION_STORAGE_KEY);
+    storage.removeItem(MODELKIT_APP_SESSION_STORAGE_KEY);
     return;
   }
 
-  sessionStorage.setItem(MODELKIT_APP_SESSION_STORAGE_KEY, JSON.stringify(payload));
+  storage.setItem(MODELKIT_APP_SESSION_STORAGE_KEY, JSON.stringify(payload));
 }
 
 export function clearModelkitAppSessionTokens(): void {
-  if (typeof sessionStorage !== 'undefined') {
-    sessionStorage.removeItem(MODELKIT_APP_SESSION_STORAGE_KEY);
+  resolvePersistentStorage()?.removeItem(MODELKIT_APP_SESSION_STORAGE_KEY);
+}
+
+function resolvePersistentStorage(): Storage | undefined {
+  if (typeof localStorage === 'undefined') {
+    return undefined;
   }
+  if (typeof sessionStorage !== 'undefined') {
+    const legacySession = sessionStorage.getItem(MODELKIT_APP_SESSION_STORAGE_KEY);
+    if (legacySession && !localStorage.getItem(MODELKIT_APP_SESSION_STORAGE_KEY)) {
+      localStorage.setItem(MODELKIT_APP_SESSION_STORAGE_KEY, legacySession);
+    }
+    if (legacySession) {
+      sessionStorage.removeItem(MODELKIT_APP_SESSION_STORAGE_KEY);
+    }
+  }
+  return localStorage;
 }
 
 export function hasModelkitAppSessionTokens(

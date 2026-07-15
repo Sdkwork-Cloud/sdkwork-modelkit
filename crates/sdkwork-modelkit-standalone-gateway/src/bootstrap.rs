@@ -3,7 +3,6 @@ use sdkwork_modelkit_database_host::build_application_services;
 use sdkwork_modelkit_gateway_assembly::assemble_application_business_router;
 use sdkwork_routes_modelkit_app_api::wrap_router_with_web_framework_from_env;
 use sdkwork_web_bootstrap::{service_router, ServiceRouterConfig};
-use tower_http::cors::CorsLayer;
 
 pub async fn build_router() -> Result<Router, Box<dyn std::error::Error + Send + Sync>> {
     let services = build_application_services()
@@ -24,7 +23,10 @@ pub async fn build_router() -> Result<Router, Box<dyn std::error::Error + Send +
     let business = Router::new()
         .merge(iam_router)
         .merge(protected)
-        .layer(CorsLayer::permissive());
+        .layer(sdkwork_web_bootstrap::application_cors_layer_from_env(
+            &["SDKWORK_MODELKIT_ENVIRONMENT"],
+            &["SDKWORK_MODELKIT_CORS_ALLOWED_ORIGINS", "SDKWORK_CORS_ALLOWED_ORIGINS"],
+        ));
 
     Ok(service_router(
         business,

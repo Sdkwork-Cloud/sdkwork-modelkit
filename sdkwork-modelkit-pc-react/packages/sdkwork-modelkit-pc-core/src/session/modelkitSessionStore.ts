@@ -45,12 +45,13 @@ function hasTokens(snapshot: ModelkitSessionSnapshot): boolean {
 }
 
 function readStorageSnapshot(): ModelkitSessionSnapshot {
-  if (typeof sessionStorage === 'undefined') {
+  const storage = resolvePersistentStorage();
+  if (!storage) {
     return {};
   }
 
   try {
-    const raw = sessionStorage.getItem(SESSION_STORAGE_KEY);
+    const raw = storage.getItem(SESSION_STORAGE_KEY);
     if (!raw) {
       return {};
     }
@@ -61,16 +62,33 @@ function readStorageSnapshot(): ModelkitSessionSnapshot {
 }
 
 function writeStorageSnapshot(snapshot: ModelkitSessionSnapshot): void {
-  if (typeof sessionStorage === 'undefined') {
+  const storage = resolvePersistentStorage();
+  if (!storage) {
     return;
   }
 
   if (!hasTokens(snapshot)) {
-    sessionStorage.removeItem(SESSION_STORAGE_KEY);
+    storage.removeItem(SESSION_STORAGE_KEY);
     return;
   }
 
-  sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(snapshot));
+  storage.setItem(SESSION_STORAGE_KEY, JSON.stringify(snapshot));
+}
+
+function resolvePersistentStorage(): Storage | undefined {
+  if (typeof localStorage === 'undefined') {
+    return undefined;
+  }
+  if (typeof sessionStorage !== 'undefined') {
+    const legacySession = sessionStorage.getItem(SESSION_STORAGE_KEY);
+    if (legacySession && !localStorage.getItem(SESSION_STORAGE_KEY)) {
+      localStorage.setItem(SESSION_STORAGE_KEY, legacySession);
+    }
+    if (legacySession) {
+      sessionStorage.removeItem(SESSION_STORAGE_KEY);
+    }
+  }
+  return localStorage;
 }
 
 export class ModelkitSessionStore {
