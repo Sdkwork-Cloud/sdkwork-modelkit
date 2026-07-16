@@ -1971,6 +1971,7 @@ dependencies = [
  "sdkwork-modelkit-catalog-service",
  "serde_json",
  "sqlx",
+ "tokio",
  "uuid",
 ]
 
@@ -2025,6 +2026,7 @@ dependencies = [
  "sdkwork-modelkit-preferences-service",
  "serde_json",
  "sqlx",
+ "tokio",
 ]
 
 [[package]]

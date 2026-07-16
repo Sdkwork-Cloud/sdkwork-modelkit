@@ -14,4 +14,4 @@ Add a configured implementation when Modelkit needs server-side presign (for exa
 ## Related
 
 - Frontend: `sdkwork-modelkit-pc-react/packages/sdkwork-modelkit-pc-core/src/host/driveUpload.ts`
-- SDK assembly dependency: `sdks/sdkwork-modelkit-app-sdk/.sdkwork-assembly.json` → `sdkwork-drive-app-sdk`
+- SDK assembly dependency: `sdks/sdkwork-modelkit-app-sdk/sdk-manifest.json` → `sdkwork-drive-app-sdk`

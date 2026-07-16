@@ -8,3 +8,6 @@ async-trait.workspace = true
 sdkwork-modelkit-preferences-service.workspace = true
 serde_json.workspace = true
 sqlx.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true

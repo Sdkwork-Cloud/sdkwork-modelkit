@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..');
 const openapiPath = 'apis/app-api/modelkit/modelkit-app-api.openapi.json';
-const assemblyPath = 'sdks/sdkwork-modelkit-app-sdk/.sdkwork-assembly.json';
+const assemblyPath = 'sdks/sdkwork-modelkit-app-sdk/sdk-manifest.json';
 
 const args = new Set(process.argv.slice(2));
 const check = args.has('--check');

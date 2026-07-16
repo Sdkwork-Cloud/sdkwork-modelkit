@@ -80,12 +80,15 @@ pub async fn seed_default_catalog(pool: &AnyPool) -> Result<(), String> {
     ];
 
     for (domain, category, payload) in seeds {
-        let item_id = format!("seed-{domain}-{}", category.to_lowercase().replace(' ', "-"));
+        let item_id = format!(
+            "seed-{domain}-{}",
+            category.to_lowercase().replace(' ', "-")
+        );
         sqlx::query(
             r#"
             INSERT INTO mk_catalog_item (
                 item_id, domain, category, payload, tenant_id, organization_id, created_by, updated_by
-            ) VALUES (?, ?, ?, ?, '0', '0', 'system', 'system')
+            ) VALUES ($1, $2, $3, $4, '0', '0', 'system', 'system')
             ON CONFLICT(item_id) DO NOTHING
             "#,
         )

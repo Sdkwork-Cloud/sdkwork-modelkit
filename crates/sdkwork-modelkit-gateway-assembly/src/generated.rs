@@ -6,4 +6,5 @@ pub const ROUTE_CRATE_COUNT: usize = 2;
 pub const ROUTE_CRATE_PACKAGES: &[&str] = &[
     "sdkwork-routes-modelkit-app-api",
     "sdkwork-routes-modelkit-http-auth",
+    "sdkwork-routes-modelkit-http-auth",
 ];

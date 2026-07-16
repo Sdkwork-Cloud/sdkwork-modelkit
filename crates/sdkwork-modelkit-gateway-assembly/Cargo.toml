@@ -15,5 +15,3 @@ tokio = { version = "1.48", features = ["macros", "rt-multi-thread"] }
 sdkwork-modelkit-database-host.workspace = true
 sdkwork-routes-modelkit-app-api.workspace = true
 sdkwork-routes-modelkit-http-auth.workspace = true
-sdkwork_routes_modelkit_app_api = { package = "sdkwork-routes-modelkit-app-api", path = "../sdkwork-routes-modelkit-app-api" }
-sdkwork_routes_modelkit_http_auth = { package = "sdkwork-routes-modelkit-http-auth", path = "../sdkwork-routes-modelkit-http-auth" }

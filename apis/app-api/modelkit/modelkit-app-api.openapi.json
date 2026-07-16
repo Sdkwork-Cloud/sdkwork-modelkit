@@ -14,7 +14,7 @@
   "paths": {
     "/app/v3/api/modelkit/preferences/{namespace}": {
       "get": {
-        "operationId": "preferences.get",
+        "operationId": "preferences.retrieve",
         "tags": [
           "modelkit"
         ],
@@ -70,7 +70,7 @@
         "x-sdkwork-permission": "modelkit.preferences.read"
       },
       "put": {
-        "operationId": "preferences.put",
+        "operationId": "preferences.update",
         "tags": [
           "modelkit"
         ],
@@ -95,7 +95,7 @@
           }
         },
         "responses": {
-          "201": {
+          "200": {
             "description": "Updated preference resource.",
             "content": {
               "application/json": {
@@ -247,7 +247,7 @@
     },
     "/app/v3/api/modelkit/catalog/{domain}/items/{itemId}": {
       "get": {
-        "operationId": "catalog.items.get",
+        "operationId": "catalog.items.retrieve",
         "tags": [
           "modelkit"
         ],
@@ -288,7 +288,7 @@
         "x-sdkwork-permission": "modelkit.catalog.read"
       },
       "patch": {
-        "operationId": "catalog.items.patch",
+        "operationId": "catalog.items.update",
         "tags": [
           "modelkit"
         ],

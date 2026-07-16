@@ -81,7 +81,7 @@ where
 {
     let result: ApiResult<_> = async {
         let _context = authenticated_actor(&app_ctx, "modelkit.catalog.read")?;
-        let limit = query.limit.unwrap_or(50);
+        let limit = query.page_size.unwrap_or(20);
         let offset = query.offset.unwrap_or(0);
         let page = state
             .catalog

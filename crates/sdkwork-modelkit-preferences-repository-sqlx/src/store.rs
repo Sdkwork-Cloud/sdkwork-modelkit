@@ -39,7 +39,7 @@ impl PreferenceRepository for SqlPreferenceStore {
             r#"
             SELECT payload, version
             FROM mk_preference_entry
-            WHERE tenant_id = ? AND organization_id = ? AND subject_type = ? AND subject_id = ? AND namespace = ?
+            WHERE tenant_id = $1 AND organization_id = $2 AND subject_type = $3 AND subject_id = $4 AND namespace = $5
             "#,
         )
         .bind(&context.tenant_id)
@@ -75,7 +75,7 @@ impl PreferenceRepository for SqlPreferenceStore {
             INSERT INTO mk_preference_entry (
                 tenant_id, organization_id, subject_type, subject_id, namespace,
                 payload, version, created_by, updated_by
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
             ON CONFLICT(tenant_id, organization_id, subject_type, subject_id, namespace)
             DO UPDATE SET
                 payload = excluded.payload,
@@ -102,5 +102,61 @@ impl PreferenceRepository for SqlPreferenceStore {
             payload,
             version: next_version,
         })
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use sdkwork_modelkit_preferences_service::ports::PreferenceRepository;
+    use sqlx::any::AnyPoolOptions;
+
+    #[tokio::test]
+    async fn numbered_bindings_support_preference_upsert_and_read() {
+        sqlx::any::install_default_drivers();
+        let pool = AnyPoolOptions::new()
+            .max_connections(1)
+            .connect("sqlite::memory:")
+            .await
+            .expect("connect in-memory SQLite");
+        crate::schema::install_schema(&pool)
+            .await
+            .expect("install preference schema");
+        let store = SqlPreferenceStore::new(pool);
+        let context = ModelkitActorContext {
+            tenant_id: "tenant-test".to_string(),
+            organization_id: "organization-test".to_string(),
+            subject_type: "user".to_string(),
+            subject_id: "subject-test".to_string(),
+            operator_id: "operator-test".to_string(),
+        };
+
+        let created = store
+            .put_preference(
+                &context,
+                "ui.settings",
+                serde_json::json!({"theme": "system"}),
+            )
+            .await
+            .expect("create preference");
+        assert_eq!(created.version, 1);
+
+        let updated = store
+            .put_preference(
+                &context,
+                "ui.settings",
+                serde_json::json!({"theme": "dark"}),
+            )
+            .await
+            .expect("update preference");
+        assert_eq!(updated.version, 2);
+
+        let loaded = store
+            .get_preference(&context, "ui.settings")
+            .await
+            .expect("read preference")
+            .expect("preference exists");
+        assert_eq!(loaded.payload, serde_json::json!({"theme": "dark"}));
+        assert_eq!(loaded.version, 2);
     }
 }

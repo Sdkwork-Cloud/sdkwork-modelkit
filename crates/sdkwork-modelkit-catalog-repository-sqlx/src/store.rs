@@ -55,36 +55,57 @@ impl CatalogRepository for SqlCatalogStore {
         query: &CatalogListQuery,
     ) -> Result<CatalogListResult, CatalogProductError> {
         let category = query.category.as_deref().unwrap_or("").trim();
+        let category = if category.eq_ignore_ascii_case("all") {
+            ""
+        } else {
+            category
+        };
         let search = query.q.as_deref().unwrap_or("").trim().to_lowercase();
+        let search_pattern = if search.is_empty() {
+            String::new()
+        } else {
+            format!("%{search}%")
+        };
 
-        let mut items = sqlx::query_as::<_, CatalogRow>(
+        let total_items = sqlx::query_scalar::<_, i64>(
             r#"
-            SELECT item_id, domain, category, payload, drive_object_ref, version
+            SELECT COUNT(*)
             FROM mk_catalog_item
-            WHERE domain = ?
-            ORDER BY updated_at DESC
+            WHERE domain = $1
+              AND ($2 = '' OR LOWER(category) = LOWER($2))
+              AND ($3 = '' OR LOWER(payload) LIKE $3)
             "#,
         )
         .bind(domain)
+        .bind(category)
+        .bind(&search_pattern)
+        .fetch_one(&self.pool)
+        .await
+        .map_err(|error| CatalogProductError::Internal(error.to_string()))?;
+
+        let items = sqlx::query_as::<_, CatalogRow>(
+            r#"
+            SELECT item_id, domain, category, payload, drive_object_ref,
+                   CAST(version AS BIGINT) AS version
+            FROM mk_catalog_item
+            WHERE domain = $1
+              AND ($2 = '' OR LOWER(category) = LOWER($2))
+              AND ($3 = '' OR LOWER(payload) LIKE $3)
+            ORDER BY updated_at DESC
+            LIMIT $4 OFFSET $5
+            "#,
+        )
+        .bind(domain)
+        .bind(category)
+        .bind(&search_pattern)
+        .bind(query.limit)
+        .bind(query.offset)
         .fetch_all(&self.pool)
         .await
         .map_err(|error| CatalogProductError::Internal(error.to_string()))?;
 
-        if !category.is_empty() && category != "All" && category != "all" {
-            items.retain(|row| row.category == category);
-        }
-
-        if !search.is_empty() {
-            items.retain(|row| row.payload.to_lowercase().contains(&search));
-        }
-
-        let total_items = items.len() as i64;
-        let offset = query.offset as usize;
-        let limit = query.limit as usize;
         let page = items
             .into_iter()
-            .skip(offset)
-            .take(limit)
             .map(Self::map_row)
             .collect::<Result<Vec<_>, _>>()?;
 
@@ -101,9 +122,10 @@ impl CatalogRepository for SqlCatalogStore {
     ) -> Result<Option<CatalogItem>, CatalogProductError> {
         let row = sqlx::query_as::<_, CatalogRow>(
             r#"
-            SELECT item_id, domain, category, payload, drive_object_ref, version
+            SELECT item_id, domain, category, payload, drive_object_ref,
+                   CAST(version AS BIGINT) AS version
             FROM mk_catalog_item
-            WHERE domain = ? AND item_id = ?
+            WHERE domain = $1 AND item_id = $2
             "#,
         )
         .bind(domain)
@@ -132,7 +154,7 @@ impl CatalogRepository for SqlCatalogStore {
             INSERT INTO mk_catalog_item (
                 item_id, domain, category, payload, drive_object_ref,
                 tenant_id, organization_id, created_by, updated_by
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
             "#,
         )
         .bind(&item_id)
@@ -177,8 +199,8 @@ impl CatalogRepository for SqlCatalogStore {
         sqlx::query(
             r#"
             UPDATE mk_catalog_item
-            SET payload = ?, version = ?, updated_by = ?, updated_at = CURRENT_TIMESTAMP
-            WHERE domain = ? AND item_id = ?
+            SET payload = $1, version = $2, updated_by = $3, updated_at = CURRENT_TIMESTAMP
+            WHERE domain = $4 AND item_id = $5
             "#,
         )
         .bind(&payload_text)
@@ -205,7 +227,7 @@ impl CatalogRepository for SqlCatalogStore {
             r#"
             SELECT DISTINCT category
             FROM mk_catalog_item
-            WHERE domain = ?
+            WHERE domain = $1
             ORDER BY category ASC
             "#,
         )
@@ -215,5 +237,81 @@ impl CatalogRepository for SqlCatalogStore {
         .map_err(|error| CatalogProductError::Internal(error.to_string()))?;
 
         Ok(rows)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use sdkwork_modelkit_catalog_service::ports::CatalogRepository;
+    use sqlx::any::AnyPoolOptions;
+
+    async fn sqlite_store() -> SqlCatalogStore {
+        sqlx::any::install_default_drivers();
+        let pool = AnyPoolOptions::new()
+            .max_connections(1)
+            .connect("sqlite::memory:")
+            .await
+            .expect("connect in-memory SQLite");
+        crate::schema::install_schema(&pool)
+            .await
+            .expect("install catalog schema");
+        SqlCatalogStore::new(pool)
+    }
+
+    #[tokio::test]
+    async fn numbered_bindings_support_catalog_crud_and_store_level_pagination() {
+        let store = sqlite_store().await;
+        let context = CatalogActorContext {
+            tenant_id: "tenant-test".to_string(),
+            organization_id: "organization-test".to_string(),
+            subject_type: "user".to_string(),
+            subject_id: "subject-test".to_string(),
+            operator_id: "operator-test".to_string(),
+        };
+
+        let created = store
+            .create_item(
+                &context,
+                "shop",
+                "keys",
+                serde_json::json!({"name": "Unique test license"}),
+                None,
+            )
+            .await
+            .expect("create catalog item");
+
+        let result = store
+            .list_items(
+                "shop",
+                &CatalogListQuery {
+                    category: Some("keys".to_string()),
+                    q: Some("unique test".to_string()),
+                    offset: 0,
+                    limit: 1,
+                },
+            )
+            .await
+            .expect("list catalog items");
+        assert_eq!(result.total_items, 1);
+        assert_eq!(result.items.len(), 1);
+        assert_eq!(result.items[0].item_id, created.item_id);
+
+        let patched = store
+            .patch_item(
+                &context,
+                "shop",
+                &created.item_id,
+                serde_json::json!({"name": "Updated test license"}),
+            )
+            .await
+            .expect("patch catalog item");
+        assert_eq!(patched.version, 2);
+
+        let categories = store
+            .list_categories("shop")
+            .await
+            .expect("list catalog categories");
+        assert!(categories.iter().any(|category| category == "keys"));
     }
 }

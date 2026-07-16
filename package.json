@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "dev": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --service-layout unified-process --deployment-profile standalone",
+    "stop": "node ../sdkwork-specs/tools/stop-sdkwork-workspace-processes.mjs --workspace .",    "dev": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --service-layout unified-process --deployment-profile standalone",
     "dev:browser": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --service-layout unified-process --deployment-profile standalone",
     "gateway:run:standalone": "node scripts/run-modelkit-standalone-gateway.mjs",
     "build": "cargo build --workspace && pnpm --filter @sdkwork/modelkit-pc-react run build",

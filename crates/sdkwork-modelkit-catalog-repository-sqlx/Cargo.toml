@@ -10,3 +10,6 @@ serde_json.workspace = true
 sqlx.workspace = true
 uuid = { version = "1.18", features = ["v4"] }
 sdkwork-modelkit-catalog-service = { workspace = true }
+
+[dev-dependencies]
+tokio.workspace = true
