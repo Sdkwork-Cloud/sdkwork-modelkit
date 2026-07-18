@@ -5,8 +5,9 @@
   "type": "module",
   "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "stop": "node ../sdkwork-specs/tools/stop-sdkwork-workspace-processes.mjs --workspace .",    "dev": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --service-layout unified-process --deployment-profile standalone",
-    "dev:browser": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --service-layout unified-process --deployment-profile standalone",
+    "stop": "node ../sdkwork-specs/tools/stop-sdkwork-workspace-processes.mjs --workspace .",
+    "dev": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --deployment-profile standalone",
+    "dev:browser": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --deployment-profile standalone",
     "gateway:run:standalone": "node scripts/run-modelkit-standalone-gateway.mjs",
     "build": "cargo build --workspace && pnpm --filter @sdkwork/modelkit-pc-react run build",
     "test": "pnpm topology:validate && pnpm test:contracts && pnpm --filter @sdkwork/modelkit-pc-react run test",
@@ -35,7 +36,9 @@
     "db:drift:check": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift-check",
     "db:bootstrap": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . bootstrap",
     "gateway:package:cloud": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs bundle --root .",
-    "gateway:validate:cloud": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs validate --root ."
+    "gateway:validate:cloud": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs validate --root .",
+    "gateway:assembly:materialize": "node scripts/gateway/assembly-materialize.mjs",
+    "gateway:assembly:validate": "node scripts/gateway/assembly-validate.mjs"
   },
   "exports": {
     ".": {

@@ -11,7 +11,7 @@ path = "src/lib.rs"
 
 [dependencies]
 axum.workspace = true
-tokio = { version = "1.48", features = ["macros", "rt-multi-thread"] }
+tokio.workspace = true
 sdkwork-modelkit-database-host.workspace = true
 sdkwork-routes-modelkit-app-api.workspace = true
 sdkwork-routes-modelkit-http-auth.workspace = true
