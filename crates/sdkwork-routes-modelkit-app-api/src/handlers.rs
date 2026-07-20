@@ -11,8 +11,8 @@ use sdkwork_modelkit_catalog_service::domain::CatalogListQuery;
 use sdkwork_modelkit_catalog_service::CatalogRepository;
 use sdkwork_modelkit_preferences_service::PreferenceRepository;
 use sdkwork_routes_modelkit_http_auth::{
-    authenticated_actor, finish_api_json, finish_created_json, map_catalog_error, map_product_error,
-    ApiResult,
+    authenticated_actor, finish_api_json, finish_created_json, map_catalog_error,
+    map_product_error, ApiResult,
 };
 use sdkwork_web_core::WebRequestContext;
 
@@ -225,7 +225,9 @@ where
             .list_categories(domain)
             .await
             .map_err(map_catalog_error)?;
-        Ok(resource_data(serde_json::json!({ "categories": categories })))
+        Ok(resource_data(
+            serde_json::json!({ "categories": categories }),
+        ))
     }
     .await;
     finish_api_json(&app_ctx, result)

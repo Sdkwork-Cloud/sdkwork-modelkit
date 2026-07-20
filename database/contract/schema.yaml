@@ -1,0 +1,17 @@
+schema_version: 1
+kind: sdkwork.database.schema
+module_id: modelkit
+contract_version: 1.0.0
+owner_team: modelkit-platform
+compliance_level: L2
+engines:
+  - postgres
+  - sqlite
+table_prefix: mk_
+tables:
+  - name: mk_preference_entry
+    lifecycle_status: active
+    owner: modelkit-platform
+  - name: mk_catalog_item
+    lifecycle_status: active
+    owner: modelkit-platform

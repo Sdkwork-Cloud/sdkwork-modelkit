@@ -20,13 +20,15 @@ pub async fn build_router() -> Result<Router, Box<dyn std::error::Error + Send +
     let domain = assemble_application_business_router(services).router;
     let protected = wrap_router_with_web_framework_from_env(domain).await;
 
-    let business = Router::new()
-        .merge(iam_router)
-        .merge(protected)
-        .layer(sdkwork_web_bootstrap::application_cors_layer_from_env(
+    let business = Router::new().merge(iam_router).merge(protected).layer(
+        sdkwork_web_bootstrap::application_cors_layer_from_env(
             &["SDKWORK_MODELKIT_ENVIRONMENT"],
-            &["SDKWORK_MODELKIT_CORS_ALLOWED_ORIGINS", "SDKWORK_CORS_ALLOWED_ORIGINS"],
-        ));
+            &[
+                "SDKWORK_MODELKIT_CORS_ALLOWED_ORIGINS",
+                "SDKWORK_CORS_ALLOWED_ORIGINS",
+            ],
+        ),
+    );
 
     Ok(service_router(
         business,

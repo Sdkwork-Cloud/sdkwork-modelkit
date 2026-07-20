@@ -5,7 +5,8 @@ pub mod response;
 
 pub use auth::authenticated_actor;
 pub use response::{
-    finish_api_json, finish_created_json, map_catalog_error, map_product_error, ApiProblem, ApiResult,
+    finish_api_json, finish_created_json, map_catalog_error, map_product_error, ApiProblem,
+    ApiResult,
 };
 
 pub fn gateway_mount() -> axum::Router {

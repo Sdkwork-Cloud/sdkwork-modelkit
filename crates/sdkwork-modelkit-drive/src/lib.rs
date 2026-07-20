@@ -40,7 +40,10 @@ pub trait ModelkitArtifactStorage: Send + Sync {
         request: PresignUploadRequest,
     ) -> Result<PresignUploadResponse, ModelkitDriveError>;
 
-    async fn confirm_upload(&self, object_ref: DriveObjectRef) -> Result<DriveObjectRef, ModelkitDriveError>;
+    async fn confirm_upload(
+        &self,
+        object_ref: DriveObjectRef,
+    ) -> Result<DriveObjectRef, ModelkitDriveError>;
 }
 
 pub struct UnconfiguredDriveAdapter;
@@ -57,7 +60,10 @@ impl ModelkitArtifactStorage for UnconfiguredDriveAdapter {
         ))
     }
 
-    async fn confirm_upload(&self, _object_ref: DriveObjectRef) -> Result<DriveObjectRef, ModelkitDriveError> {
+    async fn confirm_upload(
+        &self,
+        _object_ref: DriveObjectRef,
+    ) -> Result<DriveObjectRef, ModelkitDriveError> {
         Err(ModelkitDriveError::Internal(
             "sdkwork-drive adapter is not configured; set drive workspace env before upload"
                 .to_string(),

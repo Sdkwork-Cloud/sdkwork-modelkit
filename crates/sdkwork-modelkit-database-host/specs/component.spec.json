@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.component.spec",
+  "component": {
+    "name": "sdkwork-modelkit-database-host",
+    "displayName": "SDKWork Modelkit Database Host",
+    "version": "0.1.0",
+    "type": "rust-crate",
+    "root": "sdkwork-modelkit/crates/sdkwork-modelkit-database-host",
+    "domain": "modelkit",
+    "capability": "database-host",
+    "status": "standard",
+    "languages": ["rust"],
+    "generated": false,
+    "private": false,
+    "manifests": ["Cargo.toml"]
+  },
+  "canonicalSpecs": [
+    {
+      "file": "DATABASE_FRAMEWORK_SPEC.md",
+      "path": "../../../../sdkwork-specs/DATABASE_FRAMEWORK_SPEC.md",
+      "purpose": "Application database lifecycle and SPI orchestration."
+    },
+    {
+      "file": "DATABASE_SPEC_PROCESS_SHARED_POOL.md",
+      "path": "../../../../sdkwork-specs/DATABASE_SPEC_PROCESS_SHARED_POOL.md",
+      "purpose": "Process-shared pool ownership and temporary driver compatibility."
+    },
+    {
+      "file": "RUST_CODE_SPEC.md",
+      "path": "../../../../sdkwork-specs/RUST_CODE_SPEC.md",
+      "purpose": "Rust crate and module rules."
+    }
+  ],
+  "contracts": {
+    "layerRole": "runtime-service-host",
+    "publicExports": ["."],
+    "providedPorts": [
+      {
+        "name": "modelkitDatabaseLifecycle",
+        "export": "."
+      }
+    ],
+    "requiredPorts": [
+      {
+        "name": "processDatabasePool",
+        "export": "sdkwork_database_sqlx::DatabasePool"
+      }
+    ],
+    "runtimeEntrypoints": [
+      "sdkwork_modelkit_database_host::bootstrap_modelkit_database",
+      "sdkwork_modelkit_database_host::bootstrap_modelkit_database_from_env",
+      "sdkwork_modelkit_database_host::build_application_services"
+    ],
+    "routeManifest": null,
+    "sdkClients": [],
+    "sdkDependencies": [],
+    "dependencyApiExports": [],
+    "dependencyApiSurfaces": [],
+    "events": [],
+    "configKeys": ["SDKWORK_MODELKIT_DATABASE_*", "SDKWORK_MODELKIT_APP_ROOT"]
+  },
+  "verification": {
+    "commands": [
+      "cargo test -p sdkwork-modelkit-database-host",
+      "pnpm db:validate"
+    ]
+  }
+}

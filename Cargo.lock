@@ -1846,6 +1846,7 @@ dependencies = [
  "thiserror",
  "tokio",
  "tracing",
+ "url",
 ]
 
 [[package]]
@@ -1946,6 +1947,7 @@ dependencies = [
  "sdkwork-iam-context-service",
  "sdkwork-utils-rust",
  "sdkwork-web-axum",
+ "sdkwork-web-bootstrap",
  "sdkwork-web-core",
  "serde",
  "serde_json",
@@ -1990,11 +1992,15 @@ name = "sdkwork-modelkit-database-host"
 version = "0.1.0"
 dependencies = [
  "sdkwork-database-config",
+ "sdkwork-database-lifecycle",
+ "sdkwork-database-spi",
+ "sdkwork-database-sqlx",
  "sdkwork-modelkit-catalog-repository-sqlx",
  "sdkwork-modelkit-catalog-service",
  "sdkwork-modelkit-preferences-repository-sqlx",
  "sdkwork-modelkit-preferences-service",
  "sqlx",
+ "tokio",
 ]
 
 [[package]]

@@ -5,8 +5,14 @@ edition.workspace = true
 
 [dependencies]
 sdkwork-database-config.workspace = true
+sdkwork-database-lifecycle.workspace = true
+sdkwork-database-spi.workspace = true
+sdkwork-database-sqlx.workspace = true
 sdkwork-modelkit-preferences-repository-sqlx.workspace = true
 sdkwork-modelkit-preferences-service.workspace = true
 sdkwork-modelkit-catalog-repository-sqlx.workspace = true
 sdkwork-modelkit-catalog-service.workspace = true
 sqlx.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true

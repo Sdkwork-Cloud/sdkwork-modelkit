@@ -1,4 +1,6 @@
-use crate::domain::{CatalogActorContext, CatalogDomain, CatalogItem, CatalogListQuery, CatalogListResult};
+use crate::domain::{
+    CatalogActorContext, CatalogDomain, CatalogItem, CatalogListQuery, CatalogListResult,
+};
 use crate::error::CatalogProductError;
 use crate::ports::CatalogRepository;
 
@@ -60,7 +62,13 @@ where
             return Err(CatalogProductError::validation("payload is required"));
         }
         self.repository
-            .create_item(&context, &domain, category.trim(), payload, drive_object_ref)
+            .create_item(
+                &context,
+                &domain,
+                category.trim(),
+                payload,
+                drive_object_ref,
+            )
             .await
     }
 
@@ -80,7 +88,10 @@ where
             .await
     }
 
-    pub async fn list_categories(&self, domain: String) -> Result<Vec<String>, CatalogProductError> {
+    pub async fn list_categories(
+        &self,
+        domain: String,
+    ) -> Result<Vec<String>, CatalogProductError> {
         validate_domain(&domain)?;
         let mut categories = self.repository.list_categories(&domain).await?;
         for default in CatalogDomain::default_categories(&domain) {

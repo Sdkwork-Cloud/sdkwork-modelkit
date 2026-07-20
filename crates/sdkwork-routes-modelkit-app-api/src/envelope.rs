@@ -4,7 +4,12 @@ pub fn resource_data<T>(item: T) -> SdkWorkResourceData<T> {
     SdkWorkResourceData { item }
 }
 
-pub fn list_page<T>(items: Vec<T>, total_items: i64, offset: i64, limit: i64) -> sdkwork_utils_rust::SdkWorkPageData<T> {
+pub fn list_page<T>(
+    items: Vec<T>,
+    total_items: i64,
+    offset: i64,
+    limit: i64,
+) -> sdkwork_utils_rust::SdkWorkPageData<T> {
     sdkwork_utils_rust::SdkWorkPageData {
         items,
         page_info: sdkwork_utils_rust::PageInfo {

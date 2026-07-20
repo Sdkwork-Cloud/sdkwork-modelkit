@@ -9,8 +9,9 @@ async fn main() {
         )
         .init();
 
-    let bind_address = std::env::var("SDKWORK_MODELKIT_APPLICATION_PUBLIC_INGRESS_BIND")
-        .expect("SDKWORK_MODELKIT_APPLICATION_PUBLIC_INGRESS_BIND must be set from a topology profile env");
+    let bind_address = std::env::var("SDKWORK_MODELKIT_APPLICATION_PUBLIC_INGRESS_BIND").expect(
+        "SDKWORK_MODELKIT_APPLICATION_PUBLIC_INGRESS_BIND must be set from a topology profile env",
+    );
     let app = build_router()
         .await
         .expect("modelkit standalone-gateway bootstrap failed");

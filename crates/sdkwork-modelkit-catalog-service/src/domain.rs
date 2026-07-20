@@ -1,5 +1,5 @@
-use serde::{Deserialize, Serialize};
 use sdkwork_modelkit_preferences_service::ModelkitActorContext;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CatalogItem {

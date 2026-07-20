@@ -12,11 +12,12 @@ pub fn modelkit_app_public_path_prefixes() -> Vec<String> {
 }
 
 pub fn wrap_router_with_dev_web_framework(router: Router) -> Router {
-    let layer = WebFrameworkLayer::new(DefaultWebRequestContextResolver::default())
-        .with_profile(WebRequestContextProfile {
+    let layer = WebFrameworkLayer::new(DefaultWebRequestContextResolver::default()).with_profile(
+        WebRequestContextProfile {
             public_path_prefixes: modelkit_app_public_path_prefixes(),
             ..WebRequestContextProfile::default()
-        });
+        },
+    );
     with_web_request_context(router, layer)
 }
 

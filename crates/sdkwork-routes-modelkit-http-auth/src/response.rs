@@ -4,7 +4,9 @@ use axum::Json;
 use sdkwork_modelkit_catalog_service::error::CatalogProductError;
 use sdkwork_modelkit_preferences_service::error::PreferencesProductError;
 use sdkwork_utils_rust::{legacy_wire_result_code, SdkWorkApiResponse, SdkWorkResultCode};
-use sdkwork_web_core::{problem_response, WebFrameworkError, WebFrameworkErrorKind, WebRequestContext};
+use sdkwork_web_core::{
+    problem_response, WebFrameworkError, WebFrameworkErrorKind, WebRequestContext,
+};
 use serde::Serialize;
 
 pub type ApiResult<T> = Result<T, ApiProblem>;
@@ -72,7 +74,9 @@ impl ApiProblem {
             StatusCode::NOT_FOUND => WebFrameworkErrorKind::NotFound,
             _ => match self.code {
                 SdkWorkResultCode::ValidationError => WebFrameworkErrorKind::BadRequest,
-                SdkWorkResultCode::AuthenticationRequired => WebFrameworkErrorKind::MissingCredentials,
+                SdkWorkResultCode::AuthenticationRequired => {
+                    WebFrameworkErrorKind::MissingCredentials
+                }
                 SdkWorkResultCode::PermissionRequired => WebFrameworkErrorKind::Forbidden,
                 SdkWorkResultCode::NotFound => WebFrameworkErrorKind::NotFound,
                 _ => WebFrameworkErrorKind::InternalServerError,
@@ -120,10 +124,9 @@ fn success_response<T: Serialize>(
     let envelope = SdkWorkApiResponse::success(data, trace_id.clone());
     let mut response = (status, Json(envelope)).into_response();
     if let Ok(value) = HeaderValue::from_str(&trace_id) {
-        response.headers_mut().insert(
-            HeaderName::from_static("x-sdkwork-trace-id"),
-            value,
-        );
+        response
+            .headers_mut()
+            .insert(HeaderName::from_static("x-sdkwork-trace-id"), value);
     }
     Ok(response)
 }
@@ -136,7 +139,10 @@ pub fn finish_api_json<T: Serialize>(ctx: &WebRequestContext, result: ApiResult<
     }
 }
 
-pub fn finish_created_json<T: Serialize>(ctx: &WebRequestContext, result: ApiResult<T>) -> Response {
+pub fn finish_created_json<T: Serialize>(
+    ctx: &WebRequestContext,
+    result: ApiResult<T>,
+) -> Response {
     match result {
         Ok(data) => success_response(ctx, StatusCode::CREATED, data)
             .unwrap_or_else(|problem| problem.into_response_for(ctx)),
