@@ -5,15 +5,15 @@
   "type": "module",
   "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "stop": "node ../sdkwork-specs/tools/stop-sdkwork-workspace-processes.mjs --workspace .",
-    "dev": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --deployment-profile standalone",
-    "dev:browser": "node scripts/modelkit-dev.mjs --runtime-target browser --database postgres --deployment-profile standalone",
+    "stop": "pnpm exec sdkwork-app stop",
+    "dev": "pnpm dev:standalone",
+    "dev:browser": "pnpm dev:browser:postgres:standalone",
     "gateway:run:standalone": "node scripts/run-modelkit-standalone-gateway.mjs",
-    "build": "cargo build --workspace && pnpm --filter @sdkwork/modelkit-pc-react run build",
-    "test": "pnpm topology:validate && pnpm test:contracts && pnpm --filter @sdkwork/modelkit-pc-react run test",
-    "check": "pnpm check:app-composition && cargo check --workspace && pnpm check:pnpm-script-standard && pnpm check:architecture-alignment && pnpm topology:validate && pnpm db:validate && pnpm check:api-envelope && pnpm api:check",
-    "verify": "cargo test --workspace && pnpm test && pnpm check",
-    "clean": "cargo clean && pnpm --filter @sdkwork/modelkit-pc-react run clean",
+    "build": "pnpm exec sdkwork-app build",
+    "test": "pnpm exec sdkwork-app test",
+    "check": "pnpm exec sdkwork-app check",
+    "verify": "pnpm exec sdkwork-app verify",
+    "clean": "pnpm exec sdkwork-app clean",
     "check:pnpm-script-standard": "node ../sdkwork-specs/tools/check-pnpm-script-standard.mjs --root . --application-code-prefix modelkit",
     "check:architecture-alignment": "node --test scripts/verify-modelkit-standard-architecture.test.mjs",
     "check:app-composition": "node ../sdkwork-specs/tools/verify-repo.mjs --root .",
@@ -35,10 +35,16 @@
     "db:drift": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift",
     "db:drift:check": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . drift-check",
     "db:bootstrap": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . bootstrap",
-    "gateway:package:cloud": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs bundle --root .",
-    "gateway:validate:cloud": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs validate --root .",
-    "gateway:assembly:materialize": "node scripts/gateway/assembly-materialize.mjs",
-    "gateway:assembly:validate": "node scripts/gateway/assembly-validate.mjs"
+    "api:assembly:materialize": "node scripts/gateway/assembly-materialize.mjs",
+    "api:assembly:validate": "node scripts/gateway/assembly-validate.mjs",
+    "_sdkwork:build": "cargo build --workspace && pnpm --filter @sdkwork/modelkit-pc-react run build",
+    "_sdkwork:test": "pnpm topology:validate && pnpm test:contracts && pnpm --filter @sdkwork/modelkit-pc-react run test",
+    "_sdkwork:check": "pnpm check:app-composition && cargo check --workspace && pnpm check:pnpm-script-standard && pnpm check:architecture-alignment && pnpm topology:validate && pnpm db:validate && pnpm check:api-envelope && pnpm api:check",
+    "_sdkwork:verify": "cargo test --workspace && pnpm test && pnpm check",
+    "_sdkwork:clean": "cargo clean && pnpm --filter @sdkwork/modelkit-pc-react run clean",
+    "dev:standalone": "pnpm exec sdkwork-app dev --deployment-profile standalone",
+    "dev:cloud": "pnpm exec sdkwork-app dev --deployment-profile cloud",
+    "dev:browser:postgres:standalone": "pnpm exec sdkwork-app dev --runtime-target browser --deployment-profile standalone"
   },
   "exports": {
     ".": {
@@ -46,5 +52,8 @@
       "import": "./src/index.ts",
       "default": "./src/index.ts"
     }
+  },
+  "devDependencies": {
+    "@sdkwork/app-topology": "workspace:*"
   }
 }
