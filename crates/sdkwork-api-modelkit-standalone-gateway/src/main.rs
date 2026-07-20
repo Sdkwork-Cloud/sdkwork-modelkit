@@ -1,4 +1,4 @@
-use sdkwork_modelkit_standalone_gateway::build_router;
+use sdkwork_api_modelkit_standalone_gateway::build_router;
 
 #[tokio::main]
 async fn main() {
@@ -18,7 +18,7 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
         .expect("bind modelkit standalone-gateway listener failed");
-    tracing::info!("sdkwork-modelkit-standalone-gateway listening on {bind_address}");
+    tracing::info!("sdkwork-api-modelkit-standalone-gateway listening on {bind_address}");
     axum::serve(listener, app)
         .await
         .expect("serve modelkit standalone-gateway failed");

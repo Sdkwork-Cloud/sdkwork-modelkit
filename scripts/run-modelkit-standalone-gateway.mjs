@@ -15,7 +15,7 @@ const env = {
 
 const child = spawn(
   'cargo',
-  ['run', '-p', 'sdkwork-modelkit-standalone-gateway', '--bin', 'sdkwork-modelkit-standalone-gateway'],
+  ['run', '-p', 'sdkwork-api-modelkit-standalone-gateway', '--bin', 'sdkwork-api-modelkit-standalone-gateway'],
   { cwd: repoRoot, env, stdio: 'inherit', shell: process.platform === 'win32' },
 );
 

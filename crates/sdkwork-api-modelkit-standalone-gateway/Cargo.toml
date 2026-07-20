@@ -1,16 +1,16 @@
 [package]
-name = "sdkwork-modelkit-standalone-gateway"
+name = "sdkwork-api-modelkit-standalone-gateway"
 version.workspace = true
 edition.workspace = true
 
 [[bin]]
-name = "sdkwork-modelkit-standalone-gateway"
+name = "sdkwork-api-modelkit-standalone-gateway"
 path = "src/main.rs"
 
 [dependencies]
 axum.workspace = true
 sdkwork-modelkit-database-host.workspace = true
-sdkwork-modelkit-gateway-assembly.workspace = true
+sdkwork-api-modelkit-assembly.workspace = true
 sdkwork-routes-modelkit-app-api.workspace = true
 sdkwork-web-bootstrap.workspace = true
 sdkwork_iam_database_host.workspace = true

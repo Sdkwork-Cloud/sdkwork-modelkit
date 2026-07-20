@@ -10,7 +10,7 @@ Updated: 2026-07-02
 PC React (@sdkwork/modelkit-pc-react)
   -> pc-core SDK clients (preferences + catalog + commerce + IAM session)
   -> Vite proxy / cloud gateway
-  -> sdkwork-modelkit-standalone-gateway (Axum + sdkwork-web-framework)
+  -> sdkwork-api-modelkit-standalone-gateway (Axum + sdkwork-web-framework)
   -> preferences service + catalog service + sdkwork-database
   -> sdkwork-drive uploader (artifact bytes)
 ```

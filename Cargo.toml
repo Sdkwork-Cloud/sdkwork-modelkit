@@ -9,8 +9,8 @@ members = [
     "crates/sdkwork-modelkit-drive",
     "crates/sdkwork-routes-modelkit-http-auth",
     "crates/sdkwork-routes-modelkit-app-api",
-    "crates/sdkwork-modelkit-gateway-assembly",
-    "crates/sdkwork-modelkit-standalone-gateway",
+    "crates/sdkwork-api-modelkit-assembly",
+    "crates/sdkwork-api-modelkit-standalone-gateway",
 ]
 resolver = "2"
 
@@ -58,4 +58,4 @@ sdkwork-modelkit-catalog-repository-sqlx = { path = "crates/sdkwork-modelkit-cat
 sdkwork-modelkit-drive = { path = "crates/sdkwork-modelkit-drive" }
 sdkwork-routes-modelkit-http-auth = { path = "crates/sdkwork-routes-modelkit-http-auth" }
 sdkwork-routes-modelkit-app-api = { path = "crates/sdkwork-routes-modelkit-app-api" }
-sdkwork-modelkit-gateway-assembly = { path = "crates/sdkwork-modelkit-gateway-assembly" }
+sdkwork-api-modelkit-assembly = { path = "crates/sdkwork-api-modelkit-assembly" }
