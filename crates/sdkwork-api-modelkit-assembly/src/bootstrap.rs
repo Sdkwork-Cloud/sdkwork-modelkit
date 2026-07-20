@@ -8,7 +8,7 @@ pub struct ApiAssembly {
     pub router: Router,
 }
 
-pub fn assemble_api_router(
+pub fn assemble_business_routes(
     services: ModelkitApplicationServices,
 ) -> ApiAssembly {
     let state = ModelkitAppState::new(services.preferences, services.catalog);
@@ -20,7 +20,7 @@ pub fn assemble_api_router(
 pub async fn assemble_api_router_from_env() -> Result<ApiAssembly, String>
 {
     let services = build_application_services().await?;
-    let assembly = assemble_api_router(services);
+    let assembly = assemble_business_routes(services);
     Ok(ApiAssembly {
         router: sdkwork_routes_modelkit_app_api::wrap_router_with_web_framework_from_env(
             assembly.router,
