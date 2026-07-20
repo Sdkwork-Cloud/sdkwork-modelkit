@@ -1,5 +1,6 @@
 [workspace]
 members = [
+    "crates/sdkwork-api-modelkit-assembly",
     "crates/sdkwork-modelkit-database-host",
     "crates/sdkwork-modelkit-preferences-service",
     "crates/sdkwork-modelkit-preferences-repository-sqlx",

@@ -1,0 +1,21 @@
+{
+  "kind": "sdkwork.api.assembly",
+  "schemaVersion": 1,
+  "applicationCode": "modelkit",
+  "apiMode": "served",
+  "packageName": "sdkwork-api-modelkit-assembly",
+  "crateDir": "crates/sdkwork-api-modelkit-assembly",
+  "routeCrates": [
+    {
+      "packageName": "sdkwork-routes-modelkit-app-api",
+      "memberDir": "crates/sdkwork-routes-modelkit-app-api",
+      "libName": "sdkwork_routes_modelkit_app_api",
+      "surface": "app-api",
+      "pathPrefix": null,
+      "mountOrder": 0,
+      "componentRef": "crates/sdkwork-routes-modelkit-app-api/specs/component.spec.json",
+      "routeManifestRef": "crates/sdkwork-routes-modelkit-app-api/sdks/_route-manifests/app-api/sdkwork-routes-modelkit-app-api.route-manifest.json",
+      "sourceRef": "crates/sdkwork-routes-modelkit-app-api/Cargo.toml"
+    }
+  ]
+}
