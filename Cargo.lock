@@ -1742,6 +1742,34 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
 
 [[package]]
+name = "sdkwork-api-modelkit-assembly"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "sdkwork-modelkit-database-host",
+ "sdkwork-routes-modelkit-app-api",
+ "sdkwork-routes-modelkit-http-auth",
+ "tokio",
+]
+
+[[package]]
+name = "sdkwork-api-modelkit-standalone-gateway"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "sdkwork-api-modelkit-assembly",
+ "sdkwork-iam-database-host",
+ "sdkwork-modelkit-database-host",
+ "sdkwork-routes-iam-app-api",
+ "sdkwork-routes-modelkit-app-api",
+ "sdkwork-web-bootstrap",
+ "tokio",
+ "tower-http",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "sdkwork-database-config"
 version = "0.1.0"
 dependencies = [
@@ -2014,17 +2042,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-modelkit-gateway-assembly"
-version = "0.1.0"
-dependencies = [
- "axum",
- "sdkwork-modelkit-database-host",
- "sdkwork-routes-modelkit-app-api",
- "sdkwork-routes-modelkit-http-auth",
- "tokio",
-]
-
-[[package]]
 name = "sdkwork-modelkit-preferences-repository-sqlx"
 version = "0.1.0"
 dependencies = [
@@ -2043,23 +2060,6 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror",
-]
-
-[[package]]
-name = "sdkwork-modelkit-standalone-gateway"
-version = "0.1.0"
-dependencies = [
- "axum",
- "sdkwork-iam-database-host",
- "sdkwork-modelkit-database-host",
- "sdkwork-modelkit-gateway-assembly",
- "sdkwork-routes-iam-app-api",
- "sdkwork-routes-modelkit-app-api",
- "sdkwork-web-bootstrap",
- "tokio",
- "tower-http",
- "tracing",
- "tracing-subscriber",
 ]
 
 [[package]]
