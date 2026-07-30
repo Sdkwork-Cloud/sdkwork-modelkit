@@ -58,7 +58,7 @@
     "dependencyApiExports": [],
     "dependencyApiSurfaces": [],
     "events": [],
-    "configKeys": ["SDKWORK_MODELKIT_DATABASE_*", "SDKWORK_MODELKIT_APP_ROOT"]
+    "configKeys": ["SDKWORK_DATABASE_*", "SDKWORK_MODELKIT_APP_ROOT"]
   },
   "verification": {
     "commands": [
