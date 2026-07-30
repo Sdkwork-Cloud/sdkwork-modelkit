@@ -9,8 +9,10 @@ const env = {
   ...process.env,
   SDKWORK_MODELKIT_APPLICATION_PUBLIC_INGRESS_BIND:
     process.env.SDKWORK_MODELKIT_APPLICATION_PUBLIC_INGRESS_BIND || '127.0.0.1:3901',
-  SDKWORK_MODELKIT_DATABASE_URL:
-    process.env.SDKWORK_MODELKIT_DATABASE_URL || 'sqlite://./.runtime/modelkit-dev.db',
+  SDKWORK_DATABASE_URL:
+    process.env.SDKWORK_DATABASE_URL
+    || 'postgresql://sdkwork_ai_dev:sdkworkdev123@127.0.0.1:5432/sdkwork_ai_dev',
+  SDKWORK_DATABASE_SCHEMA: process.env.SDKWORK_DATABASE_SCHEMA || 'sdkwork_ai_dev',
 };
 
 const child = spawn(

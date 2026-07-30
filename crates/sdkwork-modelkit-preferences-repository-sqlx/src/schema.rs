@@ -2,7 +2,7 @@ use sqlx::AnyPool;
 use std::path::Path;
 
 const BASELINE_SQLITE: &str =
-    include_str!("../../../database/ddl/baseline/sqlite/0001_modelkit_baseline.sql");
+    include_str!("../../../tests/fixtures/database/sqlite/ddl/baseline/0001_modelkit_baseline.sql");
 
 pub async fn install_schema(pool: &AnyPool) -> Result<(), sqlx::Error> {
     for statement in BASELINE_SQLITE.split(';') {
