@@ -2,6 +2,7 @@
   "schemaVersion": 5,
   "kind": "sdkwork.app.topology",
   "appId": "sdkwork-modelkit",
+  "applicationCode": "modelkit",
   "archetype": "application-http-gateway",
   "profileRoot": "configs/topology",
   "profilePattern": "{deploymentProfile}.{environment}.env",
@@ -58,9 +59,6 @@
       "httpUrlEnv": "SDKWORK_MODELKIT_PLATFORM_API_GATEWAY_HTTP_URL",
       "clientHttpEnv": "VITE_SDKWORK_MODELKIT_PLATFORM_API_GATEWAY_HTTP_URL"
     }
-  },
-  "database": {
-    "appPrefix": "SDKWORK_MODELKIT"
   },
   "components": {
     "applicationServer": {
