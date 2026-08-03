@@ -67,7 +67,13 @@
           }
         },
         "x-sdkwork-api-surface": "app-api",
-        "x-sdkwork-permission": "modelkit.preferences.read"
+        "x-sdkwork-permission": "modelkit.preferences.read",
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       },
       "put": {
         "operationId": "preferences.update",
@@ -133,7 +139,13 @@
           }
         },
         "x-sdkwork-api-surface": "app-api",
-        "x-sdkwork-permission": "modelkit.preferences.write"
+        "x-sdkwork-permission": "modelkit.preferences.write",
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       }
     },
     "/app/v3/api/modelkit/catalog/{domain}/items": {
@@ -199,7 +211,13 @@
           }
         },
         "x-sdkwork-api-surface": "app-api",
-        "x-sdkwork-permission": "modelkit.catalog.read"
+        "x-sdkwork-permission": "modelkit.catalog.read",
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       },
       "post": {
         "operationId": "catalog.items.create",
@@ -242,7 +260,13 @@
           }
         },
         "x-sdkwork-api-surface": "app-api",
-        "x-sdkwork-permission": "modelkit.catalog.write"
+        "x-sdkwork-permission": "modelkit.catalog.write",
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       }
     },
     "/app/v3/api/modelkit/catalog/{domain}/items/{itemId}": {
@@ -285,7 +309,13 @@
           }
         },
         "x-sdkwork-api-surface": "app-api",
-        "x-sdkwork-permission": "modelkit.catalog.read"
+        "x-sdkwork-permission": "modelkit.catalog.read",
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       },
       "patch": {
         "operationId": "catalog.items.update",
@@ -336,7 +366,13 @@
           }
         },
         "x-sdkwork-api-surface": "app-api",
-        "x-sdkwork-permission": "modelkit.catalog.write"
+        "x-sdkwork-permission": "modelkit.catalog.write",
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       }
     },
     "/app/v3/api/modelkit/catalog/{domain}/categories": {
@@ -371,7 +407,13 @@
           }
         },
         "x-sdkwork-api-surface": "app-api",
-        "x-sdkwork-permission": "modelkit.catalog.read"
+        "x-sdkwork-permission": "modelkit.catalog.read",
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       }
     }
   },
