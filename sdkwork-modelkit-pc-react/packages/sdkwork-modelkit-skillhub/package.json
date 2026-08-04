@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "./src/index.ts",
   "dependencies": {
-    "react": "catalog:",
-    "lucide-react": "catalog:",
+    "@sdkwork/modelkit-core": "workspace:*",
     "@sdkwork/modelkit-pc-core": "workspace:*",
+    "@sdkwork/modelkit-services": "workspace:*",
     "@sdkwork/modelkit-types": "workspace:*",
-    "@sdkwork/modelkit-services": "workspace:*"
+    "lucide-react": "catalog:",
+    "react": "catalog:"
   },
   "publishConfig": {
     "access": "public",

@@ -12,9 +12,10 @@
     }
   },
   "dependencies": {
-    "@sdkwork/modelkit-types": "workspace:*",
+    "@sdkwork/modelkit-core": "workspace:*",
     "@sdkwork/modelkit-pc-core": "workspace:*",
     "@sdkwork/modelkit-sdk-typescript": "workspace:*",
+    "@sdkwork/modelkit-types": "workspace:*",
     "@sdkwork/utils": "workspace:*"
   }
 }
