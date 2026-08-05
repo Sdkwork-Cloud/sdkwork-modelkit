@@ -36,7 +36,14 @@
     "react-i18next": "catalog:",
     "sonner": "catalog:",
     "tailwindcss": "catalog:",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "@sdkwork/modelkit-skillhub": "workspace:*",
+    "@sdkwork/modelkit-plugins": "workspace:*",
+    "@sdkwork/modelkit-relay": "workspace:*",
+    "@sdkwork/modelkit-software": "workspace:*",
+    "@sdkwork/modelkit-repos": "workspace:*",
+    "@sdkwork/modelkit-news": "workspace:*",
+    "@sdkwork/modelkit-prompts": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "catalog:",

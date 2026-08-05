@@ -31,8 +31,6 @@ export class ModelkitDriveUploadService implements DriveUploadService {
       uploadProfileCode: 'archive',
       originalFileName: file.name,
       contentType,
-      organizationId: snapshot.organizationId,
-      userId: snapshot.userId,
       retention: {
         mode: 'long_term',
       },
