@@ -1,11 +1,12 @@
 import type { PropsWithChildren, ReactElement } from 'react';
-import { SdkworkSessionAuthBrowserRoot } from '@sdkwork/auth-pc-react';
 import { ModelkitAuthGate } from '@sdkwork/modelkit-pc-auth';
 
+/**
+ * Session-auth unauthorized handling is provided entirely by
+ * `ModelkitAuthGate` (self-contained IAM bootstrap + inline `AuthPage`).
+ * The app renders no Router, so `SdkworkSessionAuthBrowserRoot` — whose
+ * provider requires a Router context to navigate — must not be mounted here.
+ */
 export function AuthGate({ children }: PropsWithChildren): ReactElement {
-  return (
-    <SdkworkSessionAuthBrowserRoot>
-      <ModelkitAuthGate>{children}</ModelkitAuthGate>
-    </SdkworkSessionAuthBrowserRoot>
-  );
+  return <ModelkitAuthGate>{children}</ModelkitAuthGate>;
 }
